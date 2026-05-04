@@ -1,0 +1,146 @@
+---
+import béton from '../images/béton.png'
+import bricolage from '../images/bricolage.png'
+import clôture from '../images/clôture.png'
+import jardin from '../images/jardin.png'
+import minipelle from '../images/minipelle.png'
+---
+
+ <section class="services">
+        <div class="container">
+        <h2>Mes services à Massérac et autour de Redon</h2>
+        <div class="cards">
+            <a href="/services" class="card-one">
+                <img src={béton.src} alt="maçonnerie: dalle béton, murets, enduits, terrasse" width="354"  height="354">
+                <div class="text"><strong>Maçonnerie</strong><br>Dalle béton, murets, enduits, terrasse.</div>
+            </a>
+            <a href="/services" class="card-two">
+                <img src={bricolage.src} alt="petits travaux, construction en bois" width="220"  height="221">
+                <div class="text"><strong>Petits travaux</strong><br>Constructions en bois, nettoyage de façades, bricolages divers à l'intérieur ou à l'extérieur.</div>
+            </a>
+            <a href="/services" class="card-three">
+                <img src={jardin.src} alt="espaces verts : tonte, taille de haie avec évacuation" width="343"  height="343">
+                <div class="text"><strong>Espaces verts</strong><br>Tonte, taille de haie avec évacuation, débroussaillage.</div>
+            </a>
+            <a href="/services" class="card-four">
+                <img src={clôture.src} alt="cloture, aménagements extérieur, portail" width="310"  height="310">
+                <div class="text"><strong>Aménagement extérieur</strong><br>Pose de portail, clôture.</div>
+            </a>
+            <a href="/services" class="card-five">
+                <img src={minipelle.src} alt="Mini-pelle: terrassement, empierrement, tranchées." width="335"  height="335">
+                <div class="text"><strong>Mini-pelle</strong><br>Terrassement, empierrement, tranchées.</div>
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <style>
+
+.services {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2%;
+  text-align: center;
+  background-color: #f2eef7;
+  color: #1f2937;
+}
+.cards {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 20px auto 0;
+  flex-wrap: wrap;
+}
+
+.cards > a {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+  padding: 16px;
+  box-sizing: border-box;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.cards img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #000;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.cards > a:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9) sepia(0.2) saturate(2) hue-rotate(220deg);
+}
+
+.cards a {
+  font-size: 18px;
+}
+
+.cards .card {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 250px;
+  padding: 16px;
+  box-sizing: border-box;
+  color: #1f2937;
+}
+
+.cards > [class*="card-"]:hover img {
+  transform: scale(1.05);
+  filter: sepia(0.6);
+}
+
+@media screen and (max-width: 900px) {
+  .services {
+    padding: 2rem 0;
+  }
+  .services .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .card {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .services p,
+  .services .text,
+  .services a {
+    font-size: clamp(15px, 3.8vw, 16px);
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards > a {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 20px;
+  }
+  .cards img {
+    max-height: 120px !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .cards > a {
+    gap: 8px !important;
+  }
+}
+    </style>

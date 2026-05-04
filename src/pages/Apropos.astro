@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FilAriane from '../components/FilAriane.astro';
+import H1etTexte from '../components/H1etTexte.astro';
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://www.cjalmultiservices.fr/contact"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.cjalmultiservices.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.cjalmultiservices.fr/contact" }
+    ]
+  }
+]
+---
+
+<BaseLayout
+  title="Contacter CJAL entreprise multiservices"
+  description="Contactez CJAL pour un devis gratuit..."
+  canonical="https://www.cjalmultiservices.fr/contact"
+  ogTitle="Contacter CJAL entreprise multiservices"
+  ogDescription="Contactez CJAL pour un devis gratuit..."
+  ogImage="https://www.cjalmultiservices.fr/images/christophe-640w.webp"
+  schema={schema}
+>
+<!-- Sur la page Contact -->
+<FilAriane items={[
+  { label: "Accueil", href: "/" },
+  { label: "Contact" }
+]} />
+  <H1etTexte />
+</BaseLayout>

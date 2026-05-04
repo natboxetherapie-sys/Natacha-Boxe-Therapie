@@ -1,0 +1,279 @@
+---
+import logofb from '../images/logofb.png';
+interface Props {
+  slides: { src: string; alt: string; caption: string; width: number; height: number }[];
+  title?: string;
+  subtitle?: string;
+  facebookUrl?: string;
+}
+
+const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astro.props;
+---
+
+<section class="slider-section" id="realisations">
+  <div class="container">
+    <h2>{title}</h2>
+    {subtitle && <p>{subtitle}</p>}
+
+    <div class="slider-wrapper">
+      <button class="slider-prev" aria-label="Image précédente">‹</button>
+
+      <div class="slider-track">
+        {slides.map((slide, i) => (
+          <div class="slide" data-index={i}>
+            <img src={slide.src} alt={slide.alt} width={slide.width} height={slide.height} loading="lazy" />
+            <div class="slide-caption">{slide.caption}</div>
+          </div>
+        ))}
+      </div>
+
+      <button class="slider-next" aria-label="Image suivante">›</button>
+    </div>
+
+    {facebookUrl && (
+      <div class="cta-fb">
+        <a href={facebookUrl} target="_blank" rel="noopener noreferrer" class="btn-fb">
+          <img src={logofb.src} alt="Facebook" width="36" height="36" />
+          Voir plus de réalisations sur ma page Facebook
+        </a>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .slider-section {
+    padding: 4rem 0;
+    background: #f8fafc;
+  }
+
+  .slider-section p {
+    text-align: center;
+  }
+
+  .slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+
+  .slider-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: visible; /* ← les images latérales débordent et restent visibles */
+    padding: 2rem 0;
+    position: relative;
+    height: 380px;
+  }
+
+  .slide {
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* état latéral par défaut */
+    width: 220px;
+    height: 180px;
+    filter: blur(3px) brightness(0.65);
+    opacity: 0.75;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  /* image à gauche */
+  .slide.prev {
+    transform: translateX(-320px);
+  }
+
+  /* image active au centre */
+  .slide.active {
+    width: 380px;
+    height: 300px;
+    filter: none;
+    opacity: 1;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    cursor: default;
+    z-index: 3;
+    transform: translateX(0);
+  }
+
+  /* image à droite */
+  .slide.next {
+    transform: translateX(320px);
+  }
+
+  /* les autres images : cachées */
+  .slide.hidden {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .slide.active .slide-caption {
+    opacity: 1;
+  }
+
+  .slider-prev, .slider-next {
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+
+  .slider-prev:hover, .slider-next:hover {
+    background: white;
+    transform: scale(1.1);
+  }
+
+  .cta-fb {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-fb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: #3a2d6f;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-fb:hover {
+    background: #166fe5;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .slider-track { height: 280px; }
+    .slide { width: 150px; height: 130px; }
+    .slide.active { width: 260px; height: 220px; }
+    .slide.prev { transform: translateX(-220px); }
+    .slide.next { transform: translateX(220px); }
+  }
+
+  @media (max-width: 480px) {
+    .slider-track { height: 220px; }
+    .slide { width: 110px; height: 100px; }
+    .slide.active { width: 200px; height: 170px; }
+    .slide.prev { transform: translateX(-170px); }
+    .slide.next { transform: translateX(170px); }
+  }
+</style>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide')) as HTMLElement[];
+  let current = 0;
+
+  function updateSlider() {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active', 'prev', 'next', 'hidden');
+
+      if (i === current) {
+        slide.classList.add('active');
+      } else if (i === (current - 1 + slides.length) % slides.length) {
+        slide.classList.add('prev');
+      } else if (i === (current + 1) % slides.length) {
+        slide.classList.add('next');
+      } else {
+        slide.classList.add('hidden');
+      }
+    });
+  }
+
+  updateSlider();
+
+  const prevBtn = document.querySelector('.slider-prev');
+  const nextBtn = document.querySelector('.slider-next');
+
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlider();
+  });
+
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    updateSlider();
+  });
+
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+      if (i !== current) {
+        current = i;
+        updateSlider();
+      }
+    });
+  });
+  // Scroll horizontal avec la molette
+const wrapper = document.querySelector('.slider-wrapper');
+if (wrapper) {
+  wrapper.addEventListener('wheel', (e: WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY > 0) {
+      current = (current + 1) % slides.length;
+    } else {
+      current = (current - 1 + slides.length) % slides.length;
+    }
+    updateSlider();
+  }, { passive: false });
+}
+// Swipe tactile
+let touchStartX = 0;
+
+const track = document.querySelector('.slider-track');
+if (track) {
+  track.addEventListener('touchstart', (e: TouchEvent) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', (e: TouchEvent) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        current = (current + 1) % slides.length;
+      } else {
+        current = (current - 1 + slides.length) % slides.length;
+      }
+      updateSlider();
+    }
+  });
+}
+</script>

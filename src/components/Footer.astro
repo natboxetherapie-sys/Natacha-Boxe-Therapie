@@ -1,0 +1,94 @@
+---
+import logo from '../images/cjal.png'
+const year = new Date().getFullYear();
+---
+<footer>
+
+        
+            <div class="footer-logo"> <img src={logo.src} alt="logo de la carte de visite CJAL" width="50" height="50"></div>
+            <div class="footer-menu">
+                <p>Parcourir</p>
+                    <div class="item-1">
+                    <a href="/">Accueil</a>
+                    </div>
+                    <div class="item-2">
+                    <a href="/services">Services</a>
+                    </div>
+                    <div class="item-3">
+                    <a href="/apropos">À propos</a>
+                    </div>
+                    <div class="item-4">
+                     <a href="/contact">Contact</a>
+                    </div>
+            </div>
+        
+            <div class="footer-menu">
+                <p>Mes offres</p>
+                    <div class="item-1">
+                    <a href="/offre-1">Offre 1</a>
+                    </div>
+                    <div class="item-2">
+                    <a href="/offre-2">Offre 2</a>
+                    </div>
+            </div>
+
+            <div class="footer-menu">
+                <p>Aides et Légal</p>
+                    <div class="item-1">
+                    <a href="/mentions-legales">Mentions légales</a>
+                    </div>
+                    <div class="item-2">
+                    <a href="/politique-confidentialite">Politique de confidentialité</a>
+                    </div>
+                    <div class="item-3"><span>&copy; <span>{year}</span></span>
+                        <span>Pas à page</span>
+                    </div>
+            </div>
+        
+
+</footer>
+
+<style>
+footer {
+  background-color:#f2eef7; 
+  color: #1f2937;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+footer p, footer a, footer span {
+    font-size: 0.85em;
+}
+a {
+  text-decoration: none;
+  color: inherit;       /* même couleur que le texte */
+}
+p {
+    font-weight: bold;
+}
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-menu {
+    width: 100%;
+  }
+}
+
+</style>
+

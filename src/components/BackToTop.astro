@@ -1,0 +1,52 @@
+<button id="back-to-top" aria-label="Retour en haut">↑</button>    
+
+<style>
+
+/* bouton pour remonter */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  bottom: max(2rem, env(safe-area-inset-bottom));  /* iOS safe area */
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #2f2559;
+  color: #ffffff;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background-color: #241c47;
+  transform: translateY(-3px);
+}
+
+</style>
+
+<script>
+    const backToTop = document.getElementById("back-to-top");
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight / 2) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+</script>

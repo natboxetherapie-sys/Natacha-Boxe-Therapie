@@ -1,17 +1,60 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Hero2 from '../components/Hero2.astro';
+import BlocTexte from '../components/BlocTexte.astro';
+import Servicescards from '../components/Servicescards.astro';
+import Avis from '../components/Avis.astro';
+import Zone from '../components/Zone.astro';
+import Action from '../components/Action.astro';
+import TexteListe from '../components/TexteListe.astro';
+import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
+import Slider from '../components/Slider.astro';
+
+import cloture from '../images/cloture girondine.jpg';
+import muret from '../images/muret.jpeg';
+import portail from '../images/portail.jpeg';
+import fermettes from '../images/fermettes.jpg';
+import marches from '../images/marches.jpg';
+import enduit from '../images/enduit.jpg';
+
+
+const realisations = [
+  { src: cloture.src, alt: "Clôture girondine", caption: "Pose d'une clôture girondine", width: 383, height: 287 },
+  { src: muret.src, alt: "Muret", caption: "Montage d'un muret", width: 526, height: 394 },
+  { src: portail.src, alt: "Portail électrique", caption: "Installation d'un portail électrique", width: 544, height: 407 },
+  { src: fermettes.src, alt: "Fermettes", caption: "Fabrication de fermettes", width: 402, height: 536 },
+  { src: marches.src, alt: "Marches", caption: "Réalisation de marches extérieures", width: 408, height: 544 },
+  { src: enduit.src, alt: "Enduit sur muret", caption: "Réalisation d'un enduit sur muret", width: 427, height: 446 },
+];
+const schema = null
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Entreprise multiservices près de Redon et Massérac - CJAL"
+  description="Artisan multiservices à Massérac et autour de Redon..."
+  canonical="https://www.cjalmultiservices.fr/"
+  ogTitle="Artisan multiservices Redon Massérac"
+  ogDescription="Maçonnerie, terrassement, bricolages : tous vos travaux à domicile près de Redon"
+  ogImage="https://www.cjalmultiservices.fr/images/davalchristophe.jpg"
+
+  > 
+
+  <!-- contenu de la home -->
+   <Hero />
+   <Hero2 />
+   <BlocTexte />
+   <Servicescards />
+   <Avis />
+   <Zone />
+   <Action />
+   <TexteListe />
+   <QuestionsFrequentes />
+   <Slider
+  slides={realisations}
+  title="Mes réalisations"
+  subtitle="Découvrez mes travaux réalisés à Massérac et autour de Redon."
+  facebookUrl="https://www.facebook.com/profile.php?id=61574426724207"
+/>
+</BaseLayout>

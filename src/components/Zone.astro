@@ -1,0 +1,51 @@
+---
+import zone from '../images/zone.webp';
+---
+
+
+
+    <section class="zone">
+        <h2>Ma zone d'intervention autour de Massérac</h2>
+        <a href="https://www.google.com/maps/d/u/0/edit?mid=13fQUfgMTltm8PKCnpYgLGqX4Cd5iuHg&usp=sharing" target="_blank" rel="noopener noreferrer">
+         <img src={zone.src} alt="zone d'intervention d'un rayon de 30km autour de Massérac.Redon, Nozay, Plessé, Redon, Pipriac" width="823" height="492">
+            </a>
+    </section>
+
+    <style>
+.zone {
+  text-align: center;
+  background-color: #2f2559;
+  padding-bottom: 1rem;
+}
+
+.zone > h2 {
+  color: #ffffff;
+}
+
+.zone img {
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: auto;
+  max-width: 1400px;
+}
+
+.zone a {
+  display: inline-block;
+}
+@media screen and (max-width: 900px) {
+  .zone img {
+    max-width: 95vw;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .zone {
+    padding-bottom: 2rem;
+  }
+  .zone > h2 {
+    font-size: clamp(28px, 8vw, 32px);
+  }
+}
+    </style>

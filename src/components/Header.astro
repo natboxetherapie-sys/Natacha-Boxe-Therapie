@@ -1,0 +1,49 @@
+---
+// Script : props optionnelles
+import Navigation from './Navigation.astro';
+import logo from '../images/logo.png';
+---
+<header>
+
+<div class="header-logo"><img src={logo.src} alt="logo Natacha Boxe Thérapie" width="auto" height="150"></div>
+
+<Navigation>
+
+</Navigation>
+  
+</header>
+
+<style>
+header {
+  background-color:  #f5f2eb; 
+  color: ##2E2E2E;
+  display: flex;
+  align-items: center;
+  padding-right: 20rem;
+}
+.header-logo {
+  background-color:#f5f2eb ;
+  display: flex;
+  padding: 1rem 20rem;
+}
+@media (max-width: 900px) {
+  header {
+    padding-right: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .header-logo {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding-right: 0.5rem;
+  }
+  .header-logo {
+    padding: 0.5rem;
+  }
+}
+
+</style>

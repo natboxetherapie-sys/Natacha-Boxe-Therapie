@@ -1,0 +1,88 @@
+---
+import camion from '../images/camion.webp'
+---
+
+
+        <div class="hero">
+            <div class="text-hero">
+                <div class="main-text"><h1>Artisan multiservices à Massérac et près de Redon</h1></div>
+                <div class="secondary-text">L’<strong>entreprise CJAL Multiservices</strong> vous accompagne dans la réalisation de tous vos <strong>travaux à domicile</strong>. 
+Pour vous offrir la tranquillité d’esprit, dans tous vos <strong>travaux du quotidien, à Massérac, Guémené-Penfao et tout autour de Redon</strong>.</div>
+                <a href="/services" class="bouton-clair">Découvrez mes services</a>
+            </div>
+            <div class="hero-img">
+                <img 
+                src={camion.src}
+                alt="Camion de l'entreprise CJAL Multiservices à Redon et alentours" 
+                width="386" 
+                height="289"
+                loading="lazy">
+            </div>
+
+<style>
+
+.hero {
+  background-color:  #2f2559;  
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 0 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  max-width: 100%;
+  margin: 0;
+  padding: 5%;
+}
+
+.hero-img {
+  display: flex;
+}
+
+.hero-img img {
+  max-width: 400px;
+  width: auto;
+  height: auto;
+  margin: 30px;
+  border: 1px solid #000;
+  border-radius: 12px;
+}
+@media screen and (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+    text-align: center;
+  }
+  .text-hero {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .hero-img img {
+    max-width: 80%;
+    margin: 0 0 20px 0;
+    margin-inline: auto !important;
+    display: block;
+  }
+  .main-text {
+    font-size: clamp(28px, 5vw, 42px);
+  }
+  .secondary-text {
+    font-size: inherit;
+  }
+  .bouton-clair {
+    display: block !important;
+    margin-inline: auto !important;
+    text-align: center;
+    width: fit-content;
+    margin: 10px 0;
+  }
+}
+
+</style>

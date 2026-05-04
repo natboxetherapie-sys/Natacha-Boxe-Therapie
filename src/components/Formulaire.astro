@@ -1,0 +1,156 @@
+
+<h2>Formulaire de contact</h2>
+<form action="/ma-page-de-traitement" method="post">
+  <ul>
+    <li class="ligne-double">
+      <div class="champ">
+        <label for="name">Nom&nbsp;:</label>
+        <input type="text" id="name" name="user_name" required placeholder="Martin" autocomplete="family-name"/>
+      </div>
+      <div class="champ">
+        <label for="prenom">Prénom&nbsp;:</label>
+        <input type="text" id="prenom" name="user_prenom" required placeholder="Julie"   autocomplete="given-name" />
+      </div>
+    </li>
+    <li class="ligne-double">
+      <div class="champ">
+        <label for="mail">E-mail&nbsp;:</label>
+        <input type="email" id="mail" name="user_mail" required placeholder="exemple@email.com" autocomplete="email" />
+      </div>
+      <div class="champ">
+        <label for="tel">Téléphone&nbsp;:</label>
+        <input type="tel" id="tel" name="user_tel" placeholder="06 12 43 66 31" autocomplete="tel" />
+      </div>
+    </li>
+    <li>
+      <label for="msg">Message&nbsp;:</label>
+      <textarea id="msg" name="user_message" required placeholder="Bonjour ! Décrivez ici votre projet..."></textarea>
+    </li>
+    <li class="consentement">
+      <input type="checkbox" id="consent" name="consent" required />
+      <label for="consent">En cochant cette case, j'accepte d'être recontacté(e).</label>
+    </li>
+  </ul>
+  
+  <button type="submit" class="bouton-fonce">Envoyer le message</button>
+
+</form>
+
+<style>
+form {
+  margin: 2rem auto;
+  max-width: 480px;
+  width: 100%;
+  padding: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color:#f2eef7; 
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+/* Deux champs côte à côte */
+.ligne-double {
+  display: flex;
+  gap: 1rem;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.champ label {
+  margin-bottom: 0.3rem;
+  text-align: left;
+  width: auto;
+}
+
+.champ input {
+  width: 100%;
+}
+
+/* Champ message seul */
+li:not(.ligne-double):not(.consentement) label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input,
+textarea {
+  font: 1em sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2f2559;
+  outline: none;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+  resize: vertical;
+}
+
+/* Consentement */
+.consentement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.consentement input[type="checkbox"] {
+  width: auto;
+}
+
+button.bouton-fonce {
+  background-color: #3a2d6f; /* répète la couleur pour écraser le gris */
+  border: 2px solid white;
+  cursor: pointer;
+  font: inherit;             /* hérite de Lexend */
+  -webkit-appearance: none;  /* supprime le style natif sur Safari */
+  appearance: none;
+  display: block;
+  margin: 1.5rem auto 0; /* centré horizontalement */
+
+}
+input[type="text"]:invalid:not(:placeholder-shown),
+input[type="email"]:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+  border-color: #e53935;
+}
+@media (max-width: 480px) {
+  form {
+    padding: 1rem;
+    width: 95%;
+     box-sizing: border-box;  /* ← s'assure que padding est inclus dans la largeur */
+    overflow-x: hidden;
+  }
+
+  .ligne-double {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ligne-double + .ligne-double {
+    margin-top: 0;
+  }
+}
+
+</style>
