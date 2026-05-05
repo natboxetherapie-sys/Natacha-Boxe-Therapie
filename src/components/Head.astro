@@ -1,14 +1,45 @@
 ---
 // src/components/Head.astro
 const {
-  title = "Entreprise multiservices près de Redon et Massérac - CJAL",
-  description = "Artisan multiservices à Massérac et autour de Redon pour tous vos petits travaux du quotidien et bricolage à domicile.",
-  ogTitle = "Artisan multiservices Redon Massérac - CJAL",
-  ogDescription = "Maçonnerie, terrassement, bricolages : tous vos travaux à domicile près de Redon.",
-  ogImage = "https://www.cjalmultiservices.fr/images/christophe-640w.webp",
-  canonical = "https://www.cjalmultiservices.fr/",
-  schema= null
+  title = "Natacha Boxe Thérapie - Paimboeuf",
+  description = "Description à remplir...",
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = "https://www.natacha-boxe-therapie.fr/images/og-image.webp",
+  canonical = "https://www.natacha-boxe-therapie.fr/",
+  schema = null
 } = Astro.props;
+
+const businessData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Natacha Boxe Thérapie",
+  "image": ogImage,
+  "@id": "https://www.natacha-boxe-therapie.fr/#business",
+  "url": "https://www.natacha-boxe-therapie.fr/",
+  "telephone": "06XXXXXXXX",
+  "email": "natacha@exemple.fr",
+  "sameAs": [],
+  "areaServed": "Paimboeuf, Saint-Nazaire, ...",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ton adresse",
+    "addressLocality": "Paimboeuf",
+    "postalCode": "44560",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 0.0,
+    "longitude": 0.0
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  }
+};
 ---
 
 <!-- Base -->
@@ -18,7 +49,6 @@ const {
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-<meta name="google-site-verification" content="AEkeeS_c2Pxpw_fE-u61vdnuOhcNcrXppI3wBg-LUwE" />
 
 <!-- Open Graph -->
 <meta property="og:title" content={ogTitle} />
@@ -32,40 +62,10 @@ const {
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#3a2d6f" />
+<meta name="theme-color" content="#ta-couleur" />
 
-<!-- JSON-LD LocalBusiness (global à tout le site) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "CJAL Multiservices",
-  "image": "https://www.cjalmultiservices.fr/images/christophe-640w.webp",
-  "@id": "https://www.cjalmultiservices.fr/#business",
-  "url": "https://www.cjalmultiservices.fr/",
-  "telephone": "0667889634",
-  "email": "cjalchristophedaval@gmail.com",
-  "sameAs": ["https://www.facebook.com/profile.php?id=61574426724207"],
-  "areaServed": "Massérac, Redon, Guémené-Penfao, Grand-Fougeray",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "4 la lombardie",
-    "addressLocality": "Masserac",
-    "postalCode": "44290",
-    "addressCountry": "FR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 47.68533499999999,
-    "longitude": -1.889122
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "08:00",
-    "closes": "18:00"
-  }
-}
-</script>
+<!-- JSON-LD LocalBusiness -->
+<script type="application/ld+json" set:html={JSON.stringify(businessData)} />
+
 <!-- JSON-LD spécifique à la page (optionnel) -->
 {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

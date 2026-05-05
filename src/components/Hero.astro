@@ -1,23 +1,45 @@
 ---
-import camion from '../images/camion.webp'
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  titre: string;
+  texte: string;
+  lienLabel?: string;
+  lienHref?: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
+}
+
+const {
+  titre,
+  texte,
+  lienLabel = "Découvrez mes services",
+  lienHref = "/services",
+  image,
+  imageAlt,
+  imageWidth = 386,
+  imageHeight = 289
+} = Astro.props;
 ---
 
-
-        <div class="hero">
-            <div class="text-hero">
-                <div class="main-text"><h1>Artisan multiservices à Massérac et près de Redon</h1></div>
-                <div class="secondary-text">L’<strong>entreprise CJAL Multiservices</strong> vous accompagne dans la réalisation de tous vos <strong>travaux à domicile</strong>. 
-Pour vous offrir la tranquillité d’esprit, dans tous vos <strong>travaux du quotidien, à Massérac, Guémené-Penfao et tout autour de Redon</strong>.</div>
-                <a href="/services" class="bouton-clair">Découvrez mes services</a>
-            </div>
-            <div class="hero-img">
-                <img 
-                src={camion.src}
-                alt="Camion de l'entreprise CJAL Multiservices à Redon et alentours" 
-                width="386" 
-                height="289"
-                loading="lazy">
-            </div>
+<div class="hero">
+  <div class="text-hero">
+    <div class="main-text"><h1>{titre}</h1></div>
+    <div class="secondary-text" set:html={texte} />
+    <a href={lienHref} class="bouton-clair">{lienLabel}</a>
+  </div>
+  <div class="hero-img">
+    <img
+      src={image.src}
+      alt={imageAlt}
+      width={imageWidth}
+      height={imageHeight}
+      loading="lazy"
+    >
+  </div>
+</div>
 
 <style>
 

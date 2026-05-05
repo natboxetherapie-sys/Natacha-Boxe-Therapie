@@ -1,12 +1,28 @@
- <div class="action">
-        <div class="action-sub">
-            <div class="action-title">Votre maison mérite le meilleur!</div>
-            <div class="action-text">Devis gratuit</div>
-        </div>
-        <div class="cta">
-            <a href="services.html" class="bouton-clair">Découvrir mes services</a>
-        </div>  
-    </div>
+---
+interface Props {
+  titre?: string;
+  texte?: string;
+  lienLabel?: string;
+  lienHref?: string;
+}
+
+const {
+  titre = "Votre maison mérite le meilleur !",
+  texte = "Devis gratuit",
+  lienLabel = "Découvrir mes services",
+  lienHref = "/services"
+} = Astro.props;
+---
+
+<div class="action">
+  <div class="action-sub">
+    <div class="action-title">{titre}</div>
+    <div class="action-text">{texte}</div>
+  </div>
+  <div class="cta">
+    <a href={lienHref} class="bouton-clair">{lienLabel}</a>
+  </div>
+</div>
 
     <style>
 .action {

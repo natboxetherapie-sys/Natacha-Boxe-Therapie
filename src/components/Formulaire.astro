@@ -1,6 +1,14 @@
+---
+const { 
+  titre = "Formulaire de contact",
+  action = "/ma-page-de-traitement",
+  placeholderMessage = "Bonjour ! Décrivez ici votre demande..."
+} = Astro.props;
+---
 
-<h2>Formulaire de contact</h2>
-<form action="/ma-page-de-traitement" method="post">
+<section class= "section-formulaire">
+<h2>{titre}</h2>
+  <form action={action} method="post">
   <ul>
     <li class="ligne-double">
       <div class="champ">
@@ -24,7 +32,7 @@
     </li>
     <li>
       <label for="msg">Message&nbsp;:</label>
-      <textarea id="msg" name="user_message" required placeholder="Bonjour ! Décrivez ici votre projet..."></textarea>
+      <textarea id="msg" name="user_message" required placeholder={placeholderMessage}></textarea>
     </li>
     <li class="consentement">
       <input type="checkbox" id="consent" name="consent" required />
@@ -35,8 +43,16 @@
   <button type="submit" class="bouton-fonce">Envoyer le message</button>
 
 </form>
+</section>
+
 
 <style>
+
+.section-formulaire {
+  background-color: #f5f2eb;
+  padding: 2rem;
+}
+
 form {
   margin: 2rem auto;
   max-width: 480px;
@@ -44,7 +60,7 @@ form {
   padding: 1.5em;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color:#f2eef7; 
+  background-color:#9AA882; 
 
 }
 
@@ -120,7 +136,7 @@ textarea {
 }
 
 button.bouton-fonce {
-  background-color: #3a2d6f; /* répète la couleur pour écraser le gris */
+  background-color: #a93226; /* répète la couleur pour écraser le gris */
   border: 2px solid white;
   cursor: pointer;
   font: inherit;             /* hérite de Lexend */

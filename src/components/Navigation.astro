@@ -1,13 +1,23 @@
 ---
+interface Props {
+  liens?: { label: string; href: string }[];
+}
 
+const { 
+  liens = [
+    { label: "Accueil", href: "/" },
+    { label: "À propos", href: "/Apropos" },
+    { label: "Contact", href: "/Contact" }
+  ]
+} = Astro.props;
 
 ---
 <div class="elements">
-            <div class="links">
-                <a href="/">Accueil</a>
-                <a href="/Apropos">À propos</a>
-                <a href="/Contact">Contact</a>
-            </div>
+  <div class="links">
+    {liens.map((lien) => (
+      <a href={lien.href}>{lien.label}</a>
+    ))}
+  </div>
 </div>
 
 <style>

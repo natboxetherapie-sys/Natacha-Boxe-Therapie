@@ -1,17 +1,21 @@
+ ---
+// H1etTexte.astro
+const { titre, texte } = Astro.props;
+---
  <div class="hero">
-    <div class="container">
-            <div class="text-hero" data-aos="fade-right">
-                <div class="main-text"><h1>Contacter CJAL Artisan multiservices à Massérac et près de Redon</h1></div>
-                <div class="secondary-text">Vous avez un projet de <strong>rénovation, petits travaux, aménagement extérieur ou bricolage à domicile </strong>? Je vous accompagne avec sérieux pour des travaux réalisés avec soin, comme à la maison.<br>Basé à Massérac, j'interviens autour de Redon pour répondre à vos besoins, qu'il s'agisse d'une intervention ponctuelle ou d'un projet plus complet.</div>
-            </div>
-            </div>
-          </div>
+  <div class="container">
+    <div class="text-hero" data-aos="fade-right">
+      <div class="main-text"><h1>{titre}</h1></div>
+      <div class="secondary-text" set:html={texte} />
+    </div>
+  </div>
+</div>
 
 
 <style>
 
 .hero {
-  background-color:  #2f2559;  
+  background-color:  #9aa882;  
   display: flex;
   flex: 1;
   margin: 0;
@@ -29,6 +33,17 @@
   padding: 5%;
 }
 
+.main-text {
+  font-size: 42px;
+  color: #2e2e2e; 
+  margin: 0;
+}
+
+.secondary-text {
+  font-size: inherit;
+  color: #2e2e2e;
+  margin: 0;
+}
 
 @media screen and (max-width: 900px) {
   .hero {

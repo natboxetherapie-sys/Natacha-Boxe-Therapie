@@ -1,57 +1,61 @@
 ---
-import logo from '../images/cjal.png'
+import logo from '../images/logo.png';
+
+interface Props {
+  altLogo?: string;
+  liens?: { label: string; href: string }[];
+  liensLegaux?: { label: string; href: string }[];
+  createur?: string;
+}
+
+const {
+  altLogo = "Logo Natacha Boxe Thérapie",
+  liens = [
+    { label: "Accueil", href: "/" },
+    { label: "À propos", href: "/apropos" },
+    { label: "Contact", href: "/contact" }
+  ],
+  liensLegaux = [
+    { label: "Mentions légales", href: "/mentions-legales" },
+    { label: "Politique de confidentialité", href: "/politique-confidentialite" }
+  ],
+  createur = "Pas à page"
+} = Astro.props;
+
 const year = new Date().getFullYear();
 ---
+
 <footer>
+  <div class="footer-logo">
+    <img src={logo.src} alt={altLogo} width="auto" height="150">
+  </div>
 
-        
-            <div class="footer-logo"> <img src={logo.src} alt="logo de la carte de visite CJAL" width="50" height="50"></div>
-            <div class="footer-menu">
-                <p>Parcourir</p>
-                    <div class="item-1">
-                    <a href="/">Accueil</a>
-                    </div>
-                    <div class="item-2">
-                    <a href="/services">Services</a>
-                    </div>
-                    <div class="item-3">
-                    <a href="/apropos">À propos</a>
-                    </div>
-                    <div class="item-4">
-                     <a href="/contact">Contact</a>
-                    </div>
-            </div>
-        
-            <div class="footer-menu">
-                <p>Mes offres</p>
-                    <div class="item-1">
-                    <a href="/offre-1">Offre 1</a>
-                    </div>
-                    <div class="item-2">
-                    <a href="/offre-2">Offre 2</a>
-                    </div>
-            </div>
+  <div class="footer-menu">
+    <p>Parcourir</p>
+    {liens.map((lien) => (
+      <div><a href={lien.href}>{lien.label}</a></div>
+    ))}
+  </div>
 
-            <div class="footer-menu">
-                <p>Aides et Légal</p>
-                    <div class="item-1">
-                    <a href="/mentions-legales">Mentions légales</a>
-                    </div>
-                    <div class="item-2">
-                    <a href="/politique-confidentialite">Politique de confidentialité</a>
-                    </div>
-                    <div class="item-3"><span>&copy; <span>{year}</span></span>
-                        <span>Pas à page</span>
-                    </div>
-            </div>
+  <div class="footer-menu">
+    <p>Aides et Légal</p>
+    {liensLegaux.map((lien) => (
+      <div><a href={lien.href}>{lien.label}</a></div>
+    ))}
+    <div>
+      <span>&copy; {year}</span>
+      <span> {createur}</span>
+    </div>
+  </div>
+</footer>
         
 
 </footer>
 
 <style>
 footer {
-  background-color:#f2eef7; 
-  color: #1f2937;
+  background:#2e2e2e;; 
+  color: #f5f2eb;
   text-align: center;
   padding: 20px;
   display: flex;
@@ -69,16 +73,24 @@ footer {
     display: flex;
     align-items: center;
 }
+
+.footer-logo img {
+  border-radius: 12px;
+}
+
 footer p, footer a, footer span {
     font-size: 0.85em;
 }
+
 a {
   text-decoration: none;
   color: inherit;       /* même couleur que le texte */
 }
+
 p {
     font-weight: bold;
 }
+
 @media (max-width: 600px) {
   footer {
     flex-direction: column;

@@ -17,6 +17,7 @@ import portail from '../images/portail.jpeg';
 import fermettes from '../images/fermettes.jpg';
 import marches from '../images/marches.jpg';
 import enduit from '../images/enduit.jpg';
+import monImage from '../images/camion.webp';
 
 
 const realisations = [
@@ -42,11 +43,28 @@ const schema = null
   > 
 
   <!-- contenu de la home -->
-   <Hero />
+   <Hero 
+    titre="Titre de la page"
+    texte="Mon texte avec du <strong>HTML</strong>"
+    image={monImage}
+    imageAlt="Description de l'image"
+    lienLabel="Découvrez la boxe thérapie"
+    lienHref="/apropos" />
    <Hero2 />
    <BlocTexte />
    <Servicescards />
-   <Avis />
+   <Avis titre="Ils m'ont fait confiance"
+          lienTous="https://share.google/MZ0Um4UYKRJX61Nrh"
+          avis={[
+      {
+      texte: "Monsieur Daval est très professionnel...",
+      auteur: "Morej Lgs56"
+    },
+    {
+      texte: "Christophe est un super professionnel...",
+      auteur: "Aurel Daviaud"
+    }
+  ]}/>
    <Zone />
    <Action />
    <TexteListe />
@@ -57,4 +75,5 @@ const schema = null
   subtitle="Découvrez mes travaux réalisés à Massérac et autour de Redon."
   facebookUrl="https://www.facebook.com/profile.php?id=61574426724207"
 />
+
 </BaseLayout>
