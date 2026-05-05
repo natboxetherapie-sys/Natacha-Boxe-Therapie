@@ -1,17 +1,28 @@
 ---
-import camion from '../images/camion.webp'
+interface Props {
+  titre: string;
+  texte: string;
+  lienLabel?: string;
+  lienHref?: string;
+  image: any;
+}
+
+const {
+  titre,
+  texte,
+  lienLabel = "Parlons de votre projet",
+  lienHref = "/contact",
+  image
+} = Astro.props;
 ---
 
- 
-        <div class="hero-service" style={`--bg: url(${camion.src})`}>
-
-            <div class="text-hero-service">
-                    <div class="main-text"><h1>Petits travaux et bricolage près de Redon</h1></div>
-                    <div class="secondary-text">Je vous accompagne dans la réalisation de tous vos <strong> travaux du quotidien </strong> chez vous : terrassement, maçonnerie, aménagement extérieur, mais aussi petits travaux et bricolages divers. <br>Pour les particuliers qui veulent à la fois l’expertise d’un professionnel et la proximité d’un service comme à la maison.
-            </div>
-            <a href="/contact" class="bouton-fonce">Parlons de votre projet</a>
-        </div>
-        </div>
+<div class="hero-service" style={`--bg: url(${image.src})`}>
+  <div class="text-hero-service">
+    <div class="main-text"><h1>{titre}</h1></div>
+    <div class="secondary-text" set:html={texte} />
+    <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
+  </div>
+</div>
 
 <style>
 

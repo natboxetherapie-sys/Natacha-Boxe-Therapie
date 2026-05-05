@@ -1,15 +1,34 @@
+---
+interface Props {
+  titre?: string;
+  texte?: string;
+  liste?: string[];
+  texteSuite?: string;
+}
+
+const {
+  titre = "Tarifs à partir de 35€/h",
+  texte = "",
+  liste = [],
+  texteSuite = ""
+} = Astro.props;
+---
+
 <section class="tarifs">
-        <h2>Tarifs à partir de 35€/h</h2>
-        <p>Les prestations <strong>Espaces verts</strong> sont facturées 35€/h.<br> Pour tout le reste, les tarifs varient en fonction du projet et de vos besoins spécifiques. <br>Chaque intervention est unique, et je m'engage à vous fournir un devis clair et adapté, selon :
-            <ul class="liste-centree">
-                <li>La complexité du travail, le temps nécessaire et les outils spécifiques</li>
-                <li>Le volume ou la surface à traiter</li>
-                <li>Le type d'équipement ou de matériaux nécessaires</li>
-                <li>La localisation ou l'accessibilité du chantier</li>
-            </ul>
-            Chaque projet est discuté avec vous en amont. Je reste bien sûr à votre écoute pour trouver une solution adaptée à votre budget.<br> Le règlement en CESU préfinancé est possible pour les prestations <strong>Espaces Verts</strong> et pour les <strong>petits bricolages élémentaires.</strong>
-        </p>
-    </section>
+  <h2>{titre}</h2>
+  <p>
+    <span set:html={texte} />
+    {liste.length > 0 && (
+      <ul class="liste-centree">
+        {liste.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    )}
+    <span set:html={texteSuite} />
+  </p>
+</section>
+
 
     <style>
         .tarifs {

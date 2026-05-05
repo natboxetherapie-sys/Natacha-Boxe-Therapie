@@ -243,7 +243,7 @@ const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astr
     });
   });
   // Scroll horizontal avec la molette
-const wrapper = document.querySelector('.slider-wrapper');
+const wrapper = document.querySelector('.slider-wrapper') as HTMLElement;
 if (wrapper) {
   wrapper.addEventListener('wheel', (e: WheelEvent) => {
     e.preventDefault();
@@ -255,10 +255,11 @@ if (wrapper) {
     updateSlider();
   }, { passive: false });
 }
+
 // Swipe tactile
 let touchStartX = 0;
 
-const track = document.querySelector('.slider-track');
+const track = document.querySelector('.slider-track') as HTMLElement;
 if (track) {
   track.addEventListener('touchstart', (e: TouchEvent) => {
     touchStartX = e.touches[0].clientX;
@@ -276,4 +277,5 @@ if (track) {
     }
   });
 }
+
 </script>

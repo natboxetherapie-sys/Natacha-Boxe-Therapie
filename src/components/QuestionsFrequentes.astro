@@ -1,38 +1,34 @@
 ---
+interface Question {
+  question: string;
+  reponse: string;
+}
+
+interface Props {
+  titre?: string;
+  questions?: Question[];
+}
+
+const {
+  titre = "Questions fréquentes",
+  questions = []
+} = Astro.props;
 ---
 
- <section class="faq-section">
-        <h2>Questions fréquentes</h2>
-        <div class="faq-item">
-            <div class="faq-question"><strong>Est-ce que vous prenez les CESU pour les prestations multiservices à Massérac?</strong>
-            <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>Oui, bien sûr! Vous pouvez me régler en CESU préfinancé selon la nature des travaux réalisés à Massérac et autour de Redon : espaces verts et petits bricolages élémentaires réalisables en moins de 2h, comme par exemple monter un meuble, poser des rideaux...</p>
-            </div> </div>
-        <div class="faq-item">
-            <div class="faq-question"><strong>Est-ce que vous fournissez le matériel pour les travaux de bricolage à domicile?</strong>
-            <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>Oui, je fournis tout le matériel nécessaire pour réaliser vos travaux à Massérac et Redon. Si vous possédez déjà certains matériaux, nous pouvons les utiliser. Tout le matériel utilisé est compris dans le devis.</p>
-            </div> </div>
-        <div class="faq-item">
-            <div class="faq-question"> <strong>Quels types de travaux ne réalisez-vous pas à Massérac et près de Redon?</strong>
-            <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>Je ne réalise pas de travaux de plomberie, d'électricité ou toute intervention qui nécessite une garantie décennale. Mon objectif est d'intervenir sur des travaux que je maîtrise parfaitement, pour garantir un résultat professionnel soigné.</p>
-            </div> </div>
-        <div class="faq-item">
-            <div class="faq-question"><strong>Est-ce que vous travaillez uniquement pour les particuliers?</strong>
-            <span class="faq-toggle">+</span>
-            </div>
-            <div class="faq-answer">
-                <p>Non, j'interviens également auprès des entreprises ou des collectivités dans un rayon de 30km autour de Massérac. </p>
-            </div> 
-        </div>
-    </section>
+<section class="faq-section">
+  <h2>{titre}</h2>
+  {questions.map((item) => (
+    <div class="faq-item">
+      <div class="faq-question">
+        <strong>{item.question}</strong>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p set:html={item.reponse} />
+      </div>
+    </div>
+  ))}
+</section>
 
     <style>
 .faq-section {

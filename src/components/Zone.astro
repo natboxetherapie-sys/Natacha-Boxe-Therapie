@@ -1,15 +1,35 @@
 ---
-import zone from '../images/zone.webp';
+interface Props {
+  titre?: string;
+  image: any;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  carteUrl?: string;
+}
+
+const {
+  titre = "Ma zone d'intervention",
+  image,
+  imageAlt = "Zone d'intervention",
+  imageWidth = 823,
+  imageHeight = 492,
+  carteUrl = "#"
+} = Astro.props;
 ---
 
+<section class="zone">
+  <h2>{titre}</h2>
+  <a href={carteUrl} target="_blank" rel="noopener noreferrer">
+    <img
+      src={image.src}
+      alt={imageAlt}
+      width={imageWidth}
+      height={imageHeight}
+    />
+  </a>
+</section>
 
-
-    <section class="zone">
-        <h2>Ma zone d'intervention autour de Massérac</h2>
-        <a href="https://www.google.com/maps/d/u/0/edit?mid=13fQUfgMTltm8PKCnpYgLGqX4Cd5iuHg&usp=sharing" target="_blank" rel="noopener noreferrer">
-         <img src={zone.src} alt="zone d'intervention d'un rayon de 30km autour de Massérac.Redon, Nozay, Plessé, Redon, Pipriac" width="823" height="492">
-            </a>
-    </section>
 
     <style>
 .zone {
