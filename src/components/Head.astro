@@ -1,43 +1,43 @@
 ---
-// src/components/Head.astro
+import { siteConfig } from '../config/site.ts';
+
 const {
-  title = "Natacha Boxe Thérapie - Paimboeuf",
+  title = `${siteConfig.name} - Paimboeuf`,
   description = "Description à remplir...",
   ogTitle = title,
   ogDescription = description,
-  ogImage = "https://www.natacha-boxe-therapie.fr/images/og-image.webp",
-  canonical = "https://www.natacha-boxe-therapie.fr/",
+  ogImage = siteConfig.defaultOgImage,
+  canonical = siteConfig.url,
   schema = null
 } = Astro.props;
 
 const businessData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Natacha Boxe Thérapie",
-  "image": ogImage,
-  "@id": "https://www.natacha-boxe-therapie.fr/#business",
-  "url": "https://www.natacha-boxe-therapie.fr/",
-  "telephone": "06XXXXXXXX",
-  "email": "natacha@exemple.fr",
-  "sameAs": [],
-  "areaServed": "Paimboeuf, Saint-Nazaire, ...",
+  "name": siteConfig.name,
+  "image": siteConfig.defaultOgImage,
+  "@id": `${siteConfig.url}/#business`,
+  "url": siteConfig.url,
+  "telephone": siteConfig.telephone,
+  "email": siteConfig.email,
+  "sameAs": [siteConfig.facebook],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "ton adresse",
-    "addressLocality": "Paimboeuf",
-    "postalCode": "44560",
-    "addressCountry": "FR"
+    "streetAddress": siteConfig.adresse.rue,
+    "addressLocality": siteConfig.adresse.ville,
+    "postalCode": siteConfig.adresse.codePostal,
+    "addressCountry": siteConfig.adresse.pays
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 0.0,
-    "longitude": 0.0
+    "latitude": siteConfig.geo.latitude,
+    "longitude": siteConfig.geo.longitude
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "19:00"
+    "dayOfWeek": siteConfig.horaires.jours,
+    "opens": siteConfig.horaires.ouverture,
+    "closes": siteConfig.horaires.fermeture
   }
 };
 ---
@@ -62,7 +62,7 @@ const businessData = {
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#ta-couleur" />
+<meta name="theme-color" content="#e63946" />
 
 <!-- JSON-LD LocalBusiness -->
 <script type="application/ld+json" set:html={JSON.stringify(businessData)} />
