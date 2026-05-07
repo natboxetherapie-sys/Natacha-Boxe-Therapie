@@ -11,6 +11,7 @@ import TexteListe from '../components/TexteListe.astro';
 import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
 import Slider from '../components/Slider.astro';
 import { siteConfig } from '../config/site';
+import Etapes from '../components/Etapes.astro';
 
 import cloture from '../images/cloture girondine.jpg';
 import muret from '../images/muret.jpeg';
@@ -37,6 +38,12 @@ const realisations = [
   { src: fermettes.src, alt: "Fermettes", caption: "Fabrication de fermettes", width: 402, height: 536 },
   { src: marches.src, alt: "Marches", caption: "Réalisation de marches extérieures", width: 408, height: 544 },
   { src: enduit.src, alt: "Enduit sur muret", caption: "Réalisation d'un enduit sur muret", width: 427, height: 446 },
+];
+
+const mesEtapes = [
+  { titre: "On se rencontre", texte: "Tout commence par un échange..." },
+  { titre: "Je crée ton contenu", texte: "Je rédige et structure..." },
+  { titre: "On affine ensemble", texte: "Tu valides, on ajuste..." },
 ];
 ---
 
@@ -124,5 +131,12 @@ const realisations = [
     subtitle="Découvrez mes travaux réalisés à Massérac et autour de Redon."
     facebookUrl="https://www.facebook.com/profile.php?id=61574426724207"
   />
+
+<Etapes
+  titre="Comment ça se passe ?"
+  etapes={mesEtapes}
+  lienHref="/services"
+  lienTexte="Découvrez mes services"
+/>
 
 </BaseLayout>

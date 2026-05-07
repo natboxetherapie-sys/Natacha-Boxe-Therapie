@@ -1,0 +1,87 @@
+---
+interface Etape {
+  titre: string;
+  texte: string;
+}
+
+interface Props {
+  titre?: string;
+  etapes?: Etape[];
+  lienHref?: string;
+  lienTexte?: string;
+}
+
+const {
+  titre = "Comment ça se passe ?",
+  etapes = [],
+  lienHref = "/services",
+  lienTexte = "Découvrez mes services"
+} = Astro.props;
+---
+
+<section class="etapes">
+  <div class="container">
+    <h2>{titre}</h2>
+
+    {etapes.map((etape) => (
+      <div class="etape">
+        <div class="etape-name">
+          <h3>{etape.titre}</h3>
+        </div>
+        <div class="etape-texte">
+          <p>{etape.texte}</p>
+        </div>
+      </div>
+    ))}
+
+    <a href={lienHref} class="bouton-clair">{lienTexte}</a>
+  </div>
+</section>
+
+
+<style>
+
+.etapes {
+  background-color: var(--color-sauge); 
+  color: var(--color-gris-fonce);
+  display: flex; 
+  flex-direction: column;
+  gap: 1rem; 
+  counter-reset: etape-compteur;
+}
+
+.etape {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding-block: 1rem;
+    counter-increment: etape-compteur;
+}
+.etape + .etape {
+  border-top: 1px solid oklch(1 0 0 / 0.30);
+}
+
+
+.etape-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.etape-name::before {
+  content: counter(etape-compteur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: oklch(1 0 0 / 0.20);
+  color: white;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+
+</style>
