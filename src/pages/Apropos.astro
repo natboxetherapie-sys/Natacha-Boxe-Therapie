@@ -4,6 +4,8 @@ import FilAriane from '../components/FilAriane.astro';
 import H1etTexte from '../components/H1etTexte.astro';
 import Formulaire from '../components/Formulaire.astro';
 import { siteConfig } from '../config/site.ts';
+import Presse from '../Presse.astro';
+
 
 const schema = [
   {
@@ -42,4 +44,42 @@ const schema = [
     action="/traitement-contact"
     placeholderMessage="Bonjour ! Décrivez ici votre demande..."
   />
+    <Presse
+  titre="La presse en parle !"
+  articles={[
+    {
+      image: "/public/presse1.jpeg",
+      imageAlt: "Article des Infos du Pays de Redon sur CJAL",
+      imageWidth: 220,
+      imageHeight: 510,
+      titre: "Les Infos du Pays de Redon",
+      date: "16/04/2025"
+    },
+    {
+      image: "/public/presse2.jpeg",
+      imageAlt: "Article de Presse Océan sur CJAL",
+      imageWidth: 450,
+      imageHeight: 521,
+      titre: "Presse Océan",
+      date: "02/04/2025"
+    },
+    {
+      image: "/public/presse3.jpeg",
+      imageAlt: "Article des Infos du Pays de Redon sur CJAL",
+      imageWidth: 450,
+      imageHeight: 629,
+      titre: "Les Infos du Pays de Redon",
+      date: "18/03/2026"
+    },
+    {
+      image: "/public/presse4.jpeg",
+      imageAlt: "Article des Infos du Pays de Redon sur CJAL",
+      imageWidth: 450,
+      imageHeight: 629,
+      titre: "Les Infos du Pays de Redon",
+      date: "18/03/2026"
+    }
+  ]}
+/>
+
 </BaseLayout>

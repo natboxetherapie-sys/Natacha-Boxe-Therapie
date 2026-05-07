@@ -26,7 +26,7 @@ h1, h2, h3, strong {
 
 .container {
   max-width: 1300px;   /* ajuster selon la largeur souhaitée */
-  margin-inline: auto; /* centre le conatainer horizontalement*/
+  margin-inline: auto; /* centre le container horizontalement*/
   padding-inline: clamp(1rem, 5%, 3rem); /*espace intérieur gauche droite : min 16px, idéalement 5% max 48px, s'adapte automoatiquement*/
   width: 100%; /* prend toute la largeur disponible de son parent dans la limite du max width */
   box-sizing: border-box; /* padding inclus dans la largeur calculée */
