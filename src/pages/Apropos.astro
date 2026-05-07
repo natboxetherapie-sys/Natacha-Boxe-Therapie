@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilAriane from '../components/FilAriane.astro';
 import H1etTexte from '../components/H1etTexte.astro';
+import MembresEquipe from '../components/MembresEquipe.astro';
 import Formulaire from '../components/Formulaire.astro';
 import { siteConfig } from '../config/site.ts';
 import Presse from '../Presse.astro';
@@ -40,6 +41,15 @@ const schema = [
     titre="Contactez Natacha"
     texte="Une question sur la <strong>boxe thérapie</strong> ? Écrivez-moi !"
   />
+    <MembresEquipe
+      titre="Notre équipe"
+  membres={[
+    { nom: "Marie Dupont", role: "Graphiste", image: "/images/marie.jpg" },
+    { nom: "Paul Martin", role: "Développeur", image: "/images/paul.jpg" },
+    { nom: "Sara Lemoine", role: "Content Manager" },
+    { nom: "Léo Bernard", role: "Photographe", image: "/images/leo.jpg" },
+  ]} />
+
   <Formulaire
     action="/traitement-contact"
     placeholderMessage="Bonjour ! Décrivez ici votre demande..."

@@ -1,0 +1,126 @@
+---
+interface Membre {
+  nom: string;
+  role?: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+interface Props {
+  titre?: string;
+  membres?: Membre[];
+}
+
+const {
+  titre = "Notre équipe",
+  membres = []
+} = Astro.props;
+---
+
+<section class="equipe-section">
+  <div class="equipe-inner">
+    <h2>{titre}</h2>
+    <div class="equipe">
+      {membres.map((membre) => (
+        <div class="membre">
+          {membre.image && (
+            <img
+              src={membre.image}
+              alt={membre.imageAlt ?? membre.nom}
+              class="membre-img"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          )}
+          <div class="membre-info">
+            <h3>{membre.nom}</h3>
+            {membre.role && <span class="membre-role">{membre.role}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .equipe-section {
+    background-color: var(--color-sauge);
+    color: var(--color-gris-fonce);
+    width: 100%;
+  }
+
+  .equipe-inner {
+    max-width: 1300px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 5%, 3rem);
+    padding-block: 2rem;
+    box-sizing: border-box;
+  }
+
+  .equipe {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .membre {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-block: 1rem;
+  }
+
+  .membre + .membre {
+    border-left: 1px solid oklch(0 0 0 / 0.15);
+    padding-left: 1rem;
+  }
+
+  .membre-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;  /* ratio préservé mais remplit la boite   */
+    max-width: 100%;
+  }
+
+  .membre-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .membre-role {
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .equipe {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .membre + .membre {
+      border-left: none;
+    }
+
+    .membre:nth-child(n+3) {
+      border-top: 1px solid oklch(0 0 0 / 0.15);
+      padding-top: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .equipe {
+      grid-template-columns: 1fr;
+    }
+
+    .membre + .membre {
+      border-left: none;
+      border-top: 1px solid oklch(0 0 0 / 0.15);
+      padding-top: 1rem;
+    }
+  }
+</style>
