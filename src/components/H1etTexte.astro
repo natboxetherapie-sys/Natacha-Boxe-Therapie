@@ -15,7 +15,7 @@ const { titre, texte } = Astro.props;
 <style>
 
 .hero {
-  background-color:  #9aa882;  
+  background-color: var(--color-sauge);  
   display: flex;
   flex: 1;
   margin: 0;
@@ -35,13 +35,13 @@ const { titre, texte } = Astro.props;
 
 .main-text {
   font-size: 42px;
-  color: #2e2e2e; 
+  color: var(--color-gris-fonce); 
   margin: 0;
 }
 
 .secondary-text {
   font-size: inherit;
-  color: #2e2e2e;
+  color: var(--color-gris-fonce);
   margin: 0;
 }
 

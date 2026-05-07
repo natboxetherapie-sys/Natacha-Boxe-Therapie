@@ -8,7 +8,7 @@ export const siteConfig = {
   telephone: "06XXXXXXXX",
   email: "natacha@exemple.fr",
   facebook: "https://www.facebook.com/natacha-boxe-therapie",
-  themeColor: "#e63946",
+  themeColor: "#9aa882",
   adresse: {
     rue: "ton adresse",
     ville: "Paimboeuf",

@@ -1,5 +1,12 @@
 @import '@fontsource/lexend'; /* Grammage 400 par défaut */
 
+:root {
+  --color-blanc-lin: #f5f2eb;
+  --color-sauge: #9aa882;
+  --color-gris-fonce: #2e2e2e;
+  --color-rouge: #a93226;
+}
+
 body
  {
   font-family: 'Lexend', system-ui, sans-serif;
@@ -62,8 +69,8 @@ h1 {
 }
 */
 .bouton-clair {
-  background-color: #f2eef7;
-  color: #2f2559;
+  background-color: var(--color-blanc-lin);
+  color: var(--color-gris-fonce);
   padding: 10px;
   margin: 20px;
   border-radius: 20px;
@@ -75,16 +82,16 @@ h1 {
 }
 
 .bouton-clair:hover {
-  background-color: #e8e6F2;
-  border-color: #e8e6F2;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  background-color: color-mix(in oklch, var(--color-blanc-lin) 80%, black);
+  border-color: var(--color-gris-fonce);
+  box-shadow: 0 4px 10px oklch(0 0 0 / 0.25);
   transform: translateY(-2px);
 }
 
 
 .bouton-fonce {
-  background-color: #3a2d6f;
-  color: #f2eef7;
+  background-color: var(--color-rouge);
+  color: var(--color-blanc-lin);
   margin: 20px;
   border-radius: 20px;
   border: 2px solid white;
@@ -96,9 +103,9 @@ h1 {
 }
 
 .bouton-fonce:hover {
-  background-color: #241c47; 
-  border-color: #e8e6F2;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  background-color: color-mix(in oklch, var(--color-rouge) 80%, black);
+  border-color: var(--color-blanc-lin);
+  box-shadow: 0 4px 10px oklch(0 0 0 / 0.25);
   transform: translateY(-2px);
 }
 

@@ -51,8 +51,8 @@ const {
   align-items: center;
   padding: 1rem 2%;
   text-align: center;
-  background-color: #f2eef7;
-  color: #1f2937;
+  background-color: var(--color-sauge);
+  color: var(--color-gris-fonce);
 }
 .cards {
   display: flex;
@@ -73,7 +73,7 @@ const {
   width: 220px;
   padding: 16px;
   box-sizing: border-box;
-  color: #1f2937;
+  color: var(--color-gris-fonce);
   cursor: pointer;
 }
 
@@ -82,14 +82,14 @@ const {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  border: 2px solid #000;
+  border: 2px solid var(--color-gris-fonce);
   display: block;
   transition: transform 0.2s ease;
 }
 
 .cards > a:hover img {
   transform: scale(1.05);
-  filter: brightness(0.9) sepia(0.2) saturate(2) hue-rotate(220deg);
+  filter: brightness(0.85);
 }
 
 .cards a {
