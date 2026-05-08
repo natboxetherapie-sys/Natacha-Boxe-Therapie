@@ -4,6 +4,7 @@ interface Membre {
   role?: string;
   image?: string;
   imageAlt?: string;
+  icone?: string;
 }
 
 interface Props {
@@ -19,20 +20,23 @@ const {
 
 <section class="equipe-section">
   <div class="equipe-inner">
-    <h2>{titre}</h2>
+    <h2 set:html={titre} />
     <div class="equipe">
       {membres.map((membre) => (
         <div class="membre">
           {membre.image && (
-            <img
-              src={membre.image}
-              alt={membre.imageAlt ?? membre.nom}
-              class="membre-img"
-              width="80"
-              height="80"
-              loading="lazy"
-            />
-          )}
+  <img
+    src={membre.image}
+    alt={membre.imageAlt ?? membre.nom}
+    class="membre-img"
+    width="80"
+    height="80"
+    loading="lazy"
+  />
+)}
+{membre.icone && (
+  <span class="membre-icone" set:html={membre.icone} />
+)}
           <div class="membre-info">
             <h3>{membre.nom}</h3>
             {membre.role && <span class="membre-role">{membre.role}</span>}
@@ -61,7 +65,7 @@ const {
 
   .equipe {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     margin-top: 1rem;
   }
@@ -69,6 +73,7 @@ const {
   .membre {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.75rem;
     padding-block: 1rem;
   }
@@ -89,6 +94,7 @@ const {
   .membre-info {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 0.25rem;
   }
 
@@ -97,6 +103,18 @@ const {
     opacity: 0.7;
   }
 
+  h2 em {
+  font-weight: 400;    /* pas gras */
+  font-style: italic;
+  font-size: 0.85em;   /* légèrement plus petit */
+  opacity: 0.8;
+}
+
+.membre-icone svg {
+  width: 64px;
+  height: 64px;
+  color: var(--color-gris-fonce); /* hérite de currentColor */
+}
   @media (max-width: 768px) {
     .equipe {
       grid-template-columns: 1fr 1fr;

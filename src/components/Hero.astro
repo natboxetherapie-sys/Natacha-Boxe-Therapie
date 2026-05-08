@@ -26,9 +26,9 @@ const {
 
 <div class="hero">
   <div class="text-hero">
-    <div class="main-text"><h1>{titre}</h1></div>
+    <div class="main-text"><h2>{titre}</h2></div>
     <div class="secondary-text" set:html={texte} />
-    <a href={lienHref} class="bouton-clair">{lienLabel}</a>
+    <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
   </div>
   <div class="hero-img">
     <img
@@ -44,7 +44,7 @@ const {
 <style>
 
 .hero {
-  background-color: var(--color-sauge);  
+  background-color: var(--color-blanc-lin);  
   display: flex;
   flex: 1;
   margin: 0;
@@ -68,7 +68,7 @@ const {
 }
 
 .hero-img img {
-  max-width: 400px;
+  max-width: 500px;
   width: auto;
   height: auto;
   margin: 30px;

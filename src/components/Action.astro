@@ -7,10 +7,10 @@ interface Props {
 }
 
 const {
-  titre = "Votre maison mérite le meilleur !",
-  texte = "Devis gratuit",
-  lienLabel = "Découvrir mes services",
-  lienHref = "/services"
+  titre = "Tu veux échanger, poser une question, ou simplement savoir si c'est fait pour toi?",
+  texte = "",
+  lienLabel = "Je prends contact",
+  lienHref = "/Contact"
 } = Astro.props;
 ---
 
@@ -36,6 +36,7 @@ const {
   align-items: center;
   margin: 0;
   padding: 0 5%;
+  border-bottom: 1px solid oklch(1 0 0 / 0.15); ;
 }
 
 .action-sub {

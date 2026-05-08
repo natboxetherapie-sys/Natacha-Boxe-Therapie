@@ -2,24 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilAriane from '../components/FilAriane.astro';
 import H1etTexte from '../components/H1etTexte.astro';
+import Hero from '../components/Hero.astro';
 import MembresEquipe from '../components/MembresEquipe.astro';
-import Formulaire from '../components/Formulaire.astro';
 import { siteConfig } from '../config/site.ts';
-import Presse from '../Presse.astro';
+import Presse from '../components/Presse.astro';
+import Action from '../components/Action.astro';
+
+import monImage from '../images/natacha1.webp';
+
 
 
 const schema = [
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "url": `${siteConfig.url}/contact`
+    "@type": "AboutPage",
+    "url": `${siteConfig.url}/Apropos`
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Accueil", "item": siteConfig.url },
-      { "@type": "ListItem", "position": 2, "name": "Contact", "item": `${siteConfig.url}/contact` }
+      { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}/Apropos` }
     ]
   }
 ]
@@ -35,26 +39,85 @@ const schema = [
 >
   <FilAriane items={[
     { label: "Accueil", href: "/" },
-    { label: "Contact" }
-  ]} />
-  <H1etTexte
-    titre="Contactez Natacha"
-    texte="Une question sur la <strong>boxe thérapie</strong> ? Écrivez-moi !"
-  />
-    <MembresEquipe
-      titre="Notre équipe"
-  membres={[
-    { nom: "Marie Dupont", role: "Graphiste", image: "/images/marie.jpg" },
-    { nom: "Paul Martin", role: "Développeur", image: "/images/paul.jpg" },
-    { nom: "Sara Lemoine", role: "Content Manager" },
-    { nom: "Léo Bernard", role: "Photographe", image: "/images/leo.jpg" },
+    { label: "À propos" }
   ]} />
 
-  <Formulaire
-    action="/traitement-contact"
-    placeholderMessage="Bonjour ! Décrivez ici votre demande..."
+  <H1etTexte
+    titre="Natacha : Éducatrice, Boxeuse et Boxe Thérapeute"
+    texte={`
+    <p>J'ai poussé la porte d'une salle de boxe à 14 ans. Sans vraiment le savoir, ce jour-là, j'ai trouvé bien plus qu'un sport. J'ai trouvé un endroit où ressentir mon corps comme une force, où me dépasser, où être moi. J'ai pratiqué pendant des années, jusqu'au niveau semi-professionnel, et cette passion ne m'a plus jamais quittée.</p>
+
+    <p>En parallèle, la vie m'a menée vers un autre chemin, celui de l'humain.</p>
+
+    <p>Pendant plus de quinze ans, j'ai travaillé comme Aide Médico-Psychologique puis comme Monitrice Éducatrice. D'abord auprès d'adultes en situation de handicap, puis auprès de jeunes autistes à l'IME le Coteau de Saumur. Au quotidien, j'ai appris à lire ce que les mots ne disent pas. À adapter, à créer un espace de sécurité, à accueillir chaque personne là où elle en est, sans jugement ni pression.</p>
+
+    <p>Et puis c'est là, entre la boxe et le terrain, qu'une évidence s'est imposée.<br>
+    Le corps ne ment pas. Les émotions vivent en lui.<br>
+    C'est par le corps qu'on peut libérer les émotions.</p>
+  `}
   />
-    <Presse
+  
+  <Hero 
+    titre="La naissance d'une conviction"
+    texte={`
+    <p>En 2021, je commence à creuser cette intuition. Je me forme, j'échange, j'imagine comment allier ma passion pour la boxe et mon expérience d'éducatrice. En juin 2024, j'obtiens ma certification de Boxe Thérapeute :  une victoire dont je suis encore très fière. En septembre 2024, je lance officiellement mes premières séances.</p>
+<p>Ce que j'ai compris depuis : ce que tu portais en silence peut trouver une sortie. Ton corps peut se dénouer. Ton mental peut se libérer. Et tu peux repartir avec quelque chose que tu avais du mal à retrouver:  ta propre force.</p>
+
+<h3>Ce en quoi je crois</h3>
+<p>Je crois que tout le monde mérite un espace pour se sentir mieux, quel que soit son âge, son corps ou son histoire.</p>
+<p>Pas besoin d'être sportif pour commencer. Pas besoin d'être "bien" pour frapper.<br>
+Je crois que le corps est souvent le chemin le plus court vers l'apaisement.<br>
+Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
+<p>Mon rôle ? Mettre en mouvement ce qui était bloqué.</p>
+<p>Loin des séances formatées, loin des performances imposées,  juste un espace clair, bienveillant, fait pour toi.</p>
+
+<h3>Aujourd'hui</h3>
+<p>J'accompagne des enfants, des adolescents, des adultes, chacun avec son histoire, ses émotions, son rythme. À Saumur et dans un rayon de 20 km, en séance individuelle ou en atelier collectif, chez toi, en extérieur ou au sein de ta structure.</p>
+<p>Que tu traverses une période difficile, que tu cherches à te reconnecter à toi-même, ou que tu aies simplement une furieuse envie d'aller mieux :  tu es exactement à ta place ici.</p>
+`}
+    image={monImage}
+    imageAlt="image de Natacha, boxe thérapeute à saumur"
+    lienLabel="Découvrez la boxe thérapie"
+    lienHref="/"
+    />
+
+  <MembresEquipe
+      titre="Libérer, Renforcer, Transformer<br><em>Corps, cœur et mental en harmonie</em>"
+  membres={[
+    { nom: "Bienveillance",   icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+            stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path 
+            d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 
+            1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/>
+            <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`},
+    { nom: "Écoute", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+          stroke-linejoin="round" class="lucide lucide-ear-icon lucide-ear"><path 
+          d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/>
+          <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg>`},
+    { nom: "Adaptabilité", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+          stroke-linejoin="round" class="lucide lucide-person-standing-icon lucide-person-standing">
+          <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg>` },
+    { nom: "Respect", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+          stroke-linejoin="round" class="lucide lucide-hand-heart-icon lucide-hand-heart"><path 
+          d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/>
+          <path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 
+          0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/>
+          <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg>` },
+    { nom: "Énergie", icone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" 
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+           stroke-linejoin="round" class="lucide lucide-battery-full-icon lucide-battery-full"><path 
+           d="M10 10v4"/><path d="M14 10v4"/><path d="M22 14v-4"/><path d="M6 10v4"/><rect x="2" y="6" 
+           width="16" height="12" rx="2"/></svg>` },
+    
+
+  ]} />
+
+ 
+ 
+  <Presse
   titre="La presse en parle !"
   articles={[
     {
@@ -91,5 +154,7 @@ const schema = [
     }
   ]}
 />
+
+ <Action />
 
 </BaseLayout>
