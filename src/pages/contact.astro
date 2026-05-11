@@ -31,7 +31,7 @@ const schema = [
   schema={schema}
 >
   <FilAriane items={[
-    { label: "Accueil", href: "/" },
+    { label: "Accueil", href: `${import.meta.env.BASE_URL}` },
     { label: "Contact" }
   ]} />
   <H1etTexte
@@ -40,6 +40,6 @@ const schema = [
   />
   <Formulaire
     action="/traitement-natacha"
-    placeholderMessage="Bonjour ! Décrivez ici votre demande de séance..."
+    placeholderMessage="Bonjour ! Décrivez ici votre demande..."
   />
 </BaseLayout>

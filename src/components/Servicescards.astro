@@ -25,7 +25,7 @@ const {
     <h2>{titre}</h2>
     <div class="cards">
       {cartes.map((carte) => (
-        <a href={carte.lien ?? "/services"} class="card">
+        <a href={carte.lien ?? `${import.meta.env.BASE_URL}services`} class="card">
           <img
             src={carte.image.src}
             alt={carte.imageAlt}

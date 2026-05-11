@@ -16,14 +16,14 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "url": `${siteConfig.url}/Apropos`
+    "url": `${siteConfig.url}/apropos`
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Accueil", "item": siteConfig.url },
-      { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}/Apropos` }
+      { "@type": "ListItem", "position": 2, "name": "À propos", "item": `${siteConfig.url}/apropos` }
     ]
   }
 ]
@@ -38,7 +38,7 @@ const schema = [
   schema={schema}
 >
   <FilAriane items={[
-    { label: "Accueil", href: "/" },
+    { label: "Accueil", href: `${import.meta.env.BASE_URL}` },
     { label: "À propos" }
   ]} />
 
@@ -78,7 +78,7 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
     image={monImage}
     imageAlt="image de Natacha, boxe thérapeute à saumur"
     lienLabel="Découvrez la boxe thérapie"
-    lienHref="/"
+    lienHref={`${import.meta.env.BASE_URL}`}
     />
 
   <MembresEquipe
@@ -121,7 +121,7 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
   titre="La presse en parle !"
   articles={[
     {
-      image: "/public/presse1.jpeg",
+      image: `${import.meta.env.BASE_URL}presse1.jpeg`,
       imageAlt: "Article du courrier de l'Ouest sur Natacha Boxe Thérapie",
       imageWidth: 220,
       imageHeight: 510,
@@ -129,7 +129,7 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
       date: "15/03/2026"
     },
     {
-      image: "/public/presse2.jpeg",
+      image: `${import.meta.env.BASE_URL}presse2.jpeg`,
       imageAlt: "Article du courrier de l'Ouest sur Natacha Boxe Thérapie",
       imageWidth: 450,
       imageHeight: 521,
@@ -137,7 +137,7 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
       date: "9/07/2025"
     },
     {
-      image: "/public/presse3.jpeg",
+      image: `${import.meta.env.BASE_URL}presse3.jpeg`,
       imageAlt: "Article du courrier de l'Ouest sur Natacha Boxe Thérapie",
       imageWidth: 450,
       imageHeight: 629,
@@ -145,7 +145,7 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
       date: "10/03/2025"
     },
     {
-      image: "/public/presse4.jpeg",
+      image: `${import.meta.env.BASE_URL}presse4.jpeg`,
       imageAlt: "Article du courrier de l'Ouest sur Natacha Boxe Thérapie",
       imageWidth: 450,
       imageHeight: 629,
