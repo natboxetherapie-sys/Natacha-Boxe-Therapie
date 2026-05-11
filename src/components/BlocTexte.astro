@@ -1,35 +1,56 @@
 ---
-import sap from '../images/sap.webp'
+interface Props {
+  titre?: string;
+  description?: string;
+  boutonTexte?: string;
+  boutonLien?: string;
+  sapLien?: string;
+  sapImage?: string;
+  sapImageAlt?: string;
+}
 
+const {
+  titre = "Petits travaux de bricolage à domicile",
+  description = "J'accompagne les particuliers...",
+  boutonTexte, //
+  boutonLien, //
+  sapLien = "https://www.servicesalapersonne.gouv.fr/...",
+  sapImage,
+  sapImageAlt = "logo officiel service à la personne",
+} = Astro.props;
 ---
 
 <section class="presentation">
+  <div class="container">
+    <h2>{titre}</h2>
+    <p set:html={description} />
+  </div>
 
-    <div class="container">
-        <h2>Petits travaux de bricolage à domicile</h2>
-            <p>J’accompagne les particuliers, les entreprises et les collectivités dans la réalisation de leurs <strong> travaux d'intérieur et aménagements extérieurs</strong>, lorsqu’ils manquent de temps, de compétence ou simplement d’envie. 
-        Un seul interlocuteur de confiance, pour des travaux bien faits, sans stress ni mauvaises surprises.
-        Je propose des services très diversifiés tout en garantissant le même niveau d’exigence et de soin, quel que soit le domaine concerné. 
-        Et parce que je travaille chez vous comme chez moi, je n’interviens que sur des travaux que je maîtrise parfaitement. 
-            </p>
+  <div class="cta">
+    <div class="texte-cta">
+      {boutonTexte && (
+      <a href={boutonLien} class="bouton-fonce">{boutonTexte}</a>
+      )}
+      {sapImage && (  // 👈 conditionnel ici aussi
+      <p>Éligible au <a href="..." class="lien-texte">Service à la personne</a> selon prestations</p>
+      )}
     </div>
-    
-<div class="cta">
-         <div class="texte-cta">
-            <a href="/contact" class="bouton-fonce">Demandez votre devis gratuit</a>
-                <p>Éligible au <a href="https://www.servicesalapersonne.gouv.fr/je-suis-un-particulier/particuliers-quels-services-la-personne-peuvent-etre-regles-avec-le-cesu" target="_blank" rel="noopener noreferrer" class="lien-texte">Service à la personne</a> selon prestations</p>
-         </div>
-         <a href="https://www.servicesalapersonne.gouv.fr/je-suis-un-particulier/services-la-personne-les-avantages-fiscaux-et-sociaux-et-les-aides-pour-les" target="_blank" rel="noopener noreferrer" class="image-cta" aria-label="En savoir plus sur le CESU">
-         <img src={sap.src} alt="logo officiel service à la personne" width="220" height="162"> </a>
-</div>
+
+    {sapImage && (
+      <a href={sapLien} target="_blank" rel="noopener noreferrer" class="image-cta" aria-label="En savoir plus sur le CESU">
+        <img src={sapImage} alt={sapImageAlt} width="220" height="162" />
+      </a>
+    )}
+  </div>
 </section>
+
 
 <style>
 
 .presentation {
   padding: 2% 0; 
-  text-align: center;
-  background-color: var(--color-blanc-lin);
+  text-align:start;
+  background-color: var(--color-sauge);
   color: var(--color-gris-fonce);
 }
 .cta {

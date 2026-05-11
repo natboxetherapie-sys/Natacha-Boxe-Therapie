@@ -6,6 +6,7 @@ interface Etape {
 
 interface Props {
   titre?: string;
+  intro?: string;
   etapes?: Etape[];
   lienHref?: string;
   lienTexte?: string;
@@ -13,16 +14,17 @@ interface Props {
 
 const {
   titre = "Comment ça se passe ?",
+  intro,
   etapes = [],
-  lienHref = "/services",
-  lienTexte = "Découvrez mes services"
+  lienHref,
+  lienTexte,
 } = Astro.props;
 ---
 
 <section class="etapes">
   <div class="container">
     <h2>{titre}</h2>
-
+      {intro && <p class="etapes-intro" set:html={intro} />}
     {etapes.map((etape) => (
       <div class="etape">
         <div class="etape-name">
@@ -33,8 +35,9 @@ const {
         </div>
       </div>
     ))}
-
+    {lienTexte && (
     <a href={lienHref} class="bouton-clair">{lienTexte}</a>
+    )}
   </div>
 </section>
 

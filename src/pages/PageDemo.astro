@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Hero2 from '../components/Hero2.astro';
+import BlocTexte from '../components/BlocTexte.astro';
+import Servicescards from '../components/Servicescards.astro';
+import Avis from '../components/Avis.astro';
+import Zone from '../components/Zone.astro';
+import Action from '../components/Action.astro';
+import TexteListe from '../components/TexteListe.astro';
+import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
+import Slider from '../components/Slider.astro';
+import { siteConfig } from '../config/site';
+import Etapes from '../components/Etapes.astro';
+
+import cloture from '../images/cloture girondine.jpg';
+import muret from '../images/muret.jpeg';
+import portail from '../images/portail.jpeg';
+import fermettes from '../images/fermettes.jpg';
+import marches from '../images/marches.jpg';
+import enduit from '../images/enduit.jpg';
+import monImage from '../images/camion.webp';
+import maPhoto from '../images/camion.webp';
+
+import béton from '../images/béton.png';
+import bricolage from '../images/bricolage.png';
+import clôture from '../images/clôture.png';
+import jardin from '../images/jardin.png';
+import minipelle from '../images/minipelle.png';
+
+import zone from '../images/zone.webp';
+
+
+const realisations = [
+  { src: cloture.src, alt: "Clôture girondine", caption: "Pose d'une clôture girondine", width: 383, height: 287 },
+  { src: muret.src, alt: "Muret", caption: "Montage d'un muret", width: 526, height: 394 },
+  { src: portail.src, alt: "Portail électrique", caption: "Installation d'un portail électrique", width: 544, height: 407 },
+  { src: fermettes.src, alt: "Fermettes", caption: "Fabrication de fermettes", width: 402, height: 536 },
+  { src: marches.src, alt: "Marches", caption: "Réalisation de marches extérieures", width: 408, height: 544 },
+  { src: enduit.src, alt: "Enduit sur muret", caption: "Réalisation d'un enduit sur muret", width: 427, height: 446 },
+];
+
+const mesEtapes = [
+  { titre: "On se rencontre", texte: "Tout commence par un échange..." },
+  { titre: "Je crée ton contenu", texte: "Je rédige et structure..." },
+  { titre: "On affine ensemble", texte: "Tu valides, on ajuste..." },
+];
+---
+
+<BaseLayout
+  title={`${siteConfig.name} - ${siteConfig.tagline}`}
+  description={siteConfig.description}
+  canonical={siteConfig.url}
+  ogTitle={`${siteConfig.name} - ${siteConfig.tagline}`}
+  ogDescription={siteConfig.description}
+  schema={null}
+>
+
+  <Hero
+    titre="Titre de la page"
+    texte="Mon texte avec du <strong>HTML</strong>"
+    image={monImage}
+    imageAlt="Description de l'image"
+    lienLabel="Découvrez la boxe thérapie"
+    lienHref="/apropos"
+  />
+
+  <Hero2
+    titre="Séances de boxe thérapie à Paimboeuf"
+    texte="Je vous accompagne dans votre <strong>bien-être</strong>..."
+    image={maPhoto}
+    lienLabel="Réserver une séance"
+    lienHref="/contact"
+  />
+
+  <BlocTexte />
+
+  <Servicescards
+    titre="Mes services à Massérac et autour de Redon"
+    cartes={[
+      { image: béton, imageAlt: "maçonnerie: dalle béton, murets, enduits, terrasse", imageWidth: 354, imageHeight: 354, titre: "Maçonnerie", texte: "Dalle béton, murets, enduits, terrasse.", lien: "/services" },
+      { image: bricolage, imageAlt: "petits travaux, construction en bois", imageWidth: 220, imageHeight: 221, titre: "Petits travaux", texte: "Constructions en bois, nettoyage de façades, bricolages divers.", lien: "/services" },
+      { image: jardin, imageAlt: "espaces verts : tonte, taille de haie avec évacuation", imageWidth: 343, imageHeight: 343, titre: "Espaces verts", texte: "Tonte, taille de haie avec évacuation, débroussaillage.", lien: "/services" },
+      { image: clôture, imageAlt: "cloture, aménagements extérieur, portail", imageWidth: 310, imageHeight: 310, titre: "Aménagement extérieur", texte: "Pose de portail, clôture.", lien: "/services" },
+      { image: minipelle, imageAlt: "Mini-pelle: terrassement, empierrement, tranchées.", imageWidth: 335, imageHeight: 335, titre: "Mini-pelle", texte: "Terrassement, empierrement, tranchées.", lien: "/services" }
+    ]}
+  />
+
+  <Avis
+    titre="Ils m'ont fait confiance"
+    lienTous="https://share.google/MZ0Um4UYKRJX61Nrh"
+    avis={[
+      { texte: "Monsieur Daval est très professionnel...", auteur: "Morej Lgs56" },
+      { texte: "Christophe est un super professionnel...", auteur: "Aurel Daviaud" }
+    ]}
+  />
+
+  <Zone
+    titre="Ma zone d'intervention autour de Massérac"
+    image={zone}
+    imageAlt="Zone d'intervention d'un rayon de 30km autour de Massérac"
+    imageWidth={823}
+    imageHeight={492}
+    carteUrl="https://www.google.com/maps/d/u/0/edit?mid=13fQUfgMTltm8PKCnpYgLGqX4Cd5iuHg"
+  />
+
+  <Action />
+
+  <TexteListe
+    titre="Tarifs à partir de 35€/h"
+    texte="Les prestations <strong>Espaces verts</strong> sont facturées 35€/h.<br> Pour tout le reste, les tarifs varient en fonction du projet et de vos besoins spécifiques.<br>Chaque intervention est unique, et je m'engage à vous fournir un devis clair et adapté, selon :"
+    liste={[
+      "La complexité du travail, le temps nécessaire et les outils spécifiques",
+      "Le volume ou la surface à traiter",
+      "Le type d'équipement ou de matériaux nécessaires",
+      "La localisation ou l'accessibilité du chantier"
+    ]}
+    texteSuite="Chaque projet est discuté avec vous en amont. Je reste à votre écoute...<br>Le règlement en <strong>CESU préfinancé</strong> est possible pour les prestations <strong>Espaces Verts</strong>."
+  />
+
+  <QuestionsFrequentes
+    questions={[
+      { question: "La boxe thérapie est-elle adaptée aux débutants ?", reponse: "Oui, les séances sont adaptées à <strong>tous les niveaux</strong>..." },
+      { question: "Où se déroulent les séances ?", reponse: "Les séances ont lieu à Paimboeuf..." }
+    ]}
+  />
+
+  <Slider
+    slides={realisations}
+    title="Mes réalisations"
+    subtitle="Découvrez mes travaux réalisés à Massérac et autour de Redon."
+    facebookUrl="https://www.facebook.com/profile.php?id=61574426724207"
+  />
+
+<Etapes
+  titre="Comment ça se passe ?"
+  etapes={mesEtapes}
+  lienHref="/services"
+  lienTexte="Découvrez mes services"
+/>
+
+</BaseLayout>

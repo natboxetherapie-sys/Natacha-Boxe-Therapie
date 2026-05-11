@@ -4,13 +4,15 @@ interface Props {
   texte?: string;
   liste?: string[];
   texteSuite?: string;
+  couleurPuces?: string;
 }
 
 const {
   titre = "Tarifs à partir de 35€/h",
   texte = "",
   liste = [],
-  texteSuite = ""
+  texteSuite = "",
+  couleurPuces = "var(--color-rouge)",
 } = Astro.props;
 ---
 
@@ -19,7 +21,7 @@ const {
   <p>
     <span set:html={texte} />
     {liste.length > 0 && (
-      <ul class="liste-centree">
+      <ul class="liste-centree" style={`--puce-color: ${couleurPuces}`}>
         {liste.map((item) => (
           <li>{item}</li>
         ))}
@@ -31,7 +33,8 @@ const {
 
 
     <style>
-        .tarifs {
+
+.tarifs {
   padding: 2% 10%;
   text-align: center;
   background-color: var(--color-blanc-lin);
@@ -46,5 +49,9 @@ const {
   max-width: 600px;
   margin: auto;
   text-align: left;
+}
+
+.liste-centree li::marker {
+  color: var(--puce-color);
 }
     </style>

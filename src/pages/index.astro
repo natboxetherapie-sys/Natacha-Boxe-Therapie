@@ -1,17 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import Hero2 from '../components/Hero2.astro';
-import BlocTexte from '../components/BlocTexte.astro';
-import Servicescards from '../components/Servicescards.astro';
-import Avis from '../components/Avis.astro';
-import Zone from '../components/Zone.astro';
-import Action from '../components/Action.astro';
 import TexteListe from '../components/TexteListe.astro';
-import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
-import Slider from '../components/Slider.astro';
-import { siteConfig } from '../config/site';
+import H1EtTexte from '../components/H1etTexte.astro';
 import Etapes from '../components/Etapes.astro';
+import BlocTexte from '../components/BlocTexte.astro';
+import Avis from '../components/Avis.astro';
+import Slider from '../components/Slider.astro';
+import QuestionsFrequentes from '../components/QuestionsFrequentes.astro';
+import Action from '../components/Action.astro';
+
+import { siteConfig } from '../config/site';
 
 import cloture from '../images/cloture girondine.jpg';
 import muret from '../images/muret.jpeg';
@@ -19,8 +18,8 @@ import portail from '../images/portail.jpeg';
 import fermettes from '../images/fermettes.jpg';
 import marches from '../images/marches.jpg';
 import enduit from '../images/enduit.jpg';
-import monImage from '../images/camion.webp';
-import maPhoto from '../images/camion.webp';
+import monImage from '../images/natacha1.webp';
+import maPhoto from '../images/natacha5.webp';
 
 import béton from '../images/béton.png';
 import bricolage from '../images/bricolage.png';
@@ -28,22 +27,28 @@ import clôture from '../images/clôture.png';
 import jardin from '../images/jardin.png';
 import minipelle from '../images/minipelle.png';
 
+import natacha2 from '../images/natacha2.webp';
+import natacha3 from '../images/natacha3.webp';
+import natacha4 from '../images/natacha4.webp';
+
+
+
 import zone from '../images/zone.webp';
 
 
 const realisations = [
-  { src: cloture.src, alt: "Clôture girondine", caption: "Pose d'une clôture girondine", width: 383, height: 287 },
-  { src: muret.src, alt: "Muret", caption: "Montage d'un muret", width: 526, height: 394 },
-  { src: portail.src, alt: "Portail électrique", caption: "Installation d'un portail électrique", width: 544, height: 407 },
-  { src: fermettes.src, alt: "Fermettes", caption: "Fabrication de fermettes", width: 402, height: 536 },
-  { src: marches.src, alt: "Marches", caption: "Réalisation de marches extérieures", width: 408, height: 544 },
-  { src: enduit.src, alt: "Enduit sur muret", caption: "Réalisation d'un enduit sur muret", width: 427, height: 446 },
+  { src: natacha2.src, alt: "séance de boxe thérapie à Saumur", caption: "Séance de boxe thérapie à Saumur", width: 383, height: 287 },
+  { src: natacha3.src, alt: "séance de boxe thérapie à Saumur", caption: "Séance de boxe thérapie à Saumur", width: 526, height: 394 },
+  { src: natacha4.src, alt: "séance de boxe thérapie à Saumur", caption: "Séance de boxe thérapie à Saumur", width: 526, height: 394 },
+
 ];
 
 const mesEtapes = [
-  { titre: "On se rencontre", texte: "Tout commence par un échange..." },
-  { titre: "Je crée ton contenu", texte: "Je rédige et structure..." },
-  { titre: "On affine ensemble", texte: "Tu valides, on ajuste..." },
+  { titre: "On se rencontre", texte: "Un premier échange pour discuter de tes besoins, de ton profil et de tes objectifs. C'est là que tout commence." },
+  { titre: "Je construis ta séance", texte: "Je prépare un programme sur-mesure, adapté à tes besoins et à ce que tu traverses, que tu viennes seul(e), en groupe ou en équipe." },
+  { titre: "On se lance", texte: "Une séance qui allie mouvement et écoute. Un espace pour lâcher prise et se reconnecter à soi." },
+  { titre: "On fait le point", texte: "Après chaque séance, on échange sur les ressentis. J'ajuste si besoin, pour que tu avances à ton rythme, vers tes objectifs." },
+
 ];
 ---
 
@@ -57,86 +62,152 @@ const mesEtapes = [
 >
 
   <Hero
-    titre="Titre de la page"
-    texte="Mon texte avec du <strong>HTML</strong>"
+    titre="Natacha Boxe Thérapie - Saumur"
+    texte="<strong>Libérer, Renforcer, transformer</strong><br>
+            <em>Corps, coeur et mental en harmonie</em>
+          <p>Boxe thérapeute certifiée à Saumur et dans un rayon de 20km</p>
+
+<p>Tu en as plein le corps, plein le coeur. Tu as une furieuse envie d’aller mieux.<br>
+La boxe thérapie, c’est un espace bienveillant, sans jugement ni compétition, où le mouvement libère ce que les mots ne réussissent pas à dire.</p>
+
+Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
+"
     image={monImage}
-    imageAlt="Description de l'image"
-    lienLabel="Découvrez la boxe thérapie"
-    lienHref="/apropos"
+    imageAlt="Natacha Boxe Thérapie Saumur"
+    lienLabel="Je prends contact"
+    lienHref="/Contact"
   />
 
-  <Hero2
-    titre="Séances de boxe thérapie à Paimboeuf"
-    texte="Je vous accompagne dans votre <strong>bien-être</strong>..."
-    image={maPhoto}
-    lienLabel="Réserver une séance"
-    lienHref="/contact"
-  />
 
-  <BlocTexte />
+  <BlocTexte 
+       titre="La boxe thérapie, c'est quoi ?"
+  description="<strong>Non, on ne vient pas ici pour se battre.</strong>
+    <p>La boxe thérapie, c'est utiliser les gestes et l'énergie de la boxe : les frappes, le souffle, le mouvement,  comme un outil pour libérer ce qu'on porte à l'intérieur : les tensions, les émotions enfouies, le stress accumulé. </p>
+<p>Tout ce qui tourne en boucle et qu'on n'arrive pas à évacuer autrement.</p>
+<p>Le principe est simple : le corps et les émotions sont profondément liés.<br> Quand le corps se dénoue, quelque chose se libère aussi à l'intérieur. On repart plus léger, plus ancré, plus fort.<br>
+Ce n'est pas du sport intensif. Ce n'est pas de la compétition. Ce n'est pas réservé aux sportifs.
+C'est un espace pour souffler, lâcher prise et se reconnecter à soi,  à son propre rythme, dans un cadre bienveillant et sécurisé.</p>
+"
+  
+  
+/>
 
-  <Servicescards
-    titre="Mes services à Massérac et autour de Redon"
-    cartes={[
-      { image: béton, imageAlt: "maçonnerie: dalle béton, murets, enduits, terrasse", imageWidth: 354, imageHeight: 354, titre: "Maçonnerie", texte: "Dalle béton, murets, enduits, terrasse.", lien: "/services" },
-      { image: bricolage, imageAlt: "petits travaux, construction en bois", imageWidth: 220, imageHeight: 221, titre: "Petits travaux", texte: "Constructions en bois, nettoyage de façades, bricolages divers.", lien: "/services" },
-      { image: jardin, imageAlt: "espaces verts : tonte, taille de haie avec évacuation", imageWidth: 343, imageHeight: 343, titre: "Espaces verts", texte: "Tonte, taille de haie avec évacuation, débroussaillage.", lien: "/services" },
-      { image: clôture, imageAlt: "cloture, aménagements extérieur, portail", imageWidth: 310, imageHeight: 310, titre: "Aménagement extérieur", texte: "Pose de portail, clôture.", lien: "/services" },
-      { image: minipelle, imageAlt: "Mini-pelle: terrassement, empierrement, tranchées.", imageWidth: 335, imageHeight: 335, titre: "Mini-pelle", texte: "Terrassement, empierrement, tranchées.", lien: "/services" }
+
+  <TexteListe
+  couleurPuces='var(--color-rouge)'
+    titre="Les bienfaits de la boxe thérapie"
+    liste={[
+      "Évacuer le stress et les émotions bloquées",
+      "Reprendre confiance en son corps et en soi",
+      "Lâcher prise sans pression ni jugement",
+      "Se reconnecter à ses ressentis",
+      "Retrouver de l'énergie et de la vitalité"
     ]}
   />
+
+
+
+  <Hero
+    titre="À qui s'adressent mes séances ?"
+    texte="<h3>Les enfants et les adolescents</h3>
+        <p>Un espace pour bouger, se défouler et reprendre confiance.<br>
+        La boxe thérapie est une activité accessible à tous les jeunes, quel que soit leur niveau sportif ou leur rapport au mouvement. <br>
+        Chaque séance individuelle est pensée pour avancer à son rythme, sans compétition ni pression.<br> J'accompagne les enfants et les adolescents à Saumur et alentours, en adaptant chaque séance à leur profil.
+
+        <h3>Les femmes et les hommes en quête de mieux-être</h3>
+        <p>Pour retrouver de l'énergie, lâcher prise et se reconnecter avec soi-même.<br>
+        Après une période difficile ( maladie chronique, burn-out, séparation, deuil...) ou simplement quand on a besoin de souffler, la boxe thérapie offre un espace doux et dynamisant pour évacuer les émotions accumulées et retrouver de l'élan.<br>
+         Je propose un accompagnement adapté à ton état physique et émotionnel, à ton rythme.</p>
+
+      <h3> Les entreprises et les équipes</h3>
+      <p>Pour un team building qui crée un vrai lien.<br>
+      J'interviens auprès des entreprises et des équipes avec des ateliers sur mesure qui travaillent en profondeur la cohésion, la confiance et la gestion des émotions.<br> Accessible à tous, aucun niveau sportif requis.<br>
+       Une activité originale et mémorable, à Saumur et dans un rayon de 20 km, pour que la bonne énergie du jour J se prolonge bien au-delà.
+
+      <h3>Les enfants à besoins spécifiques</h3>
+      <p>Une activité adaptée, sans avoir à tout réexpliquer.<br>
+      Je travaille au quotidien avec des jeunes en situation de handicap à l'IME le Coteau de Saumur. Je connais les TSA et le handicap dans sa diversité, je comprends les besoins spécifiques, j'adapte chaque séance en conséquence.<br> Un cadre stable, des rituels clairs, et une approche pensée pour que chaque enfant puisse avancer sereinement, à sa façon.</p>
+"
+  
+    image={maPhoto}
+    imageAlt="Natacha Boxe Thérapie Saumur"
+    lienLabel="J'aimerais en savoir plus"
+    lienHref="/Contact"
+  />
+
+
+
+
+
+<Etapes
+  titre="Comment se déroule une séance ?"
+  intro="Chaque accompagnement commence par un échange téléphonique pour se mettre d’accord sur tes besoins et tes attentes.<br> 
+    Je fournis tout le matériel, il n'y a rien à prévoir de ton côté.<br>
+    Les séances se déroulent à domicile, en extérieur ou directement dans vos locaux."
+
+  etapes={mesEtapes}
+  
+/>
+
+
+
+  <BlocTexte 
+       titre="Mes tarifs"
+  description=" <h3>Séance individuelle : 50 €</h3>
+    
+    Un accompagnement personnalisé pour libérer les tensions, te reconnecter à toi-même et avancer à ton rythme. <br>
+    Chaque séance s'adapte à tes besoins, dans le respect de ton corps, de tes émotions et de ton histoire.<br>
+    <h3>Ateliers collectifs, associations et entreprises</h3>
+    <strong>Tarif sur devis</strong>
+    <p>J'interviens auprès de différents publics — adolescents, adultes, structures médico-sociales, entreprises — avec des séances adaptées aux objectifs et aux besoins de chacun. </p>
+"
+  boutonTexte="Contacte-moi pour échanger autour de ton projet"
+  boutonLien="/contact"
+  
+/>
+  
+
 
   <Avis
     titre="Ils m'ont fait confiance"
-    lienTous="https://share.google/MZ0Um4UYKRJX61Nrh"
+    lienTous="https://share.google/MZ0Um4UYKRJX61Nrh" 
     avis={[
-      { texte: "Monsieur Daval est très professionnel...", auteur: "Morej Lgs56" },
-      { texte: "Christophe est un super professionnel...", auteur: "Aurel Daviaud" }
-    ]}
-  />
+      { texte: "Ces séances m'ont permis d'améliorer ma condition physique, renforcer mon cardio et augmenter ma confiance et l' estime de soi. De plus, j'éprouve un bien être ,un équilibre psychique. Ces séances en groupe nous apportent des moments de partage et de soutien, le tout soupoudré de légèreté ,de rires et d' entraide.", auteur: "Stéfany"},
+      { texte: "Une rencontre au moment où j'en avais vraiment besoin. Les séances font vraiment du bien! On en redemande même en dehors des créneaux de la MJC.", auteur: "Bénédicte"},
+      { texte: "Des cours de boxe thérapie qui font un bien fou, autant au corps qu’au mental. On ressort boostée, plus confiante et pleine d’énergie. Natacha est incroyable : son énergie est communicative et elle sait vraiment nous embarquer. Il y a une vraie sororité dans le groupe, beaucoup de bienveillance et aucun jugement. Un moment pour soi qui fait vraiment la différence !", auteur: "Coralie"},
+      { texte: "Dans nos vies de femmes, on nous fait toujours sentir qu’on est un petit peu nulle et donc la boxe ça faisait des années que ça me tentait mais une fois de plus j’avais peur d’être nulle. Quand je suis tombée sur la carte de Natacha je me suis dit il faut tenter et c’est une des meilleures choses que j’ai faite. La bienveillance, l’écoute et les bons conseils de Natacha ainsi que les pattes d’ours 🤣 ont fait que je ne suis pas prête d’oublier cette première séance. Après les séances individuelles je me suis inscrite à la MJC et toutes les semaines je fais une séance en groupe. Avec des filles super 👍 Cette activité me permet de me sentir plus solide, plus belle et alors plus du tout nulle ❤️. ", auteur: "Céline"  },
+      { texte: "Praticante de la boxe thérapie en collectivité et en individuel, c'est une libération émotionnelle profonde et un épanouissement personnel. Prise de confiance, dépassement de soi, introspection assurée", auteur: "Marine Leroyer" },
+      { texte: "Grâce à Natacha, j’ai récupéré beaucoup de confiance en moi, je fais maintenant des choses que je n’osais pas avant. J’ai adoré les discussions avec elle pendant les cours.", auteur: "Sarah, 10 ans" },
+      { texte: "L’approche de Natacha m’a permis de reprendre contact avec mes possibles, de pointer ce qui était encore à travailler. Nous sommes, toutes les femmes, une grande communauté qui doit s’entraider et Natacha est une d’entre nous qui a décidé d’aider les autres.", auteur: "China" }
 
-  <Zone
-    titre="Ma zone d'intervention autour de Massérac"
-    image={zone}
-    imageAlt="Zone d'intervention d'un rayon de 30km autour de Massérac"
-    imageWidth={823}
-    imageHeight={492}
-    carteUrl="https://www.google.com/maps/d/u/0/edit?mid=13fQUfgMTltm8PKCnpYgLGqX4Cd5iuHg"
-  />
-
-  <Action />
-
-  <TexteListe
-    titre="Tarifs à partir de 35€/h"
-    texte="Les prestations <strong>Espaces verts</strong> sont facturées 35€/h.<br> Pour tout le reste, les tarifs varient en fonction du projet et de vos besoins spécifiques.<br>Chaque intervention est unique, et je m'engage à vous fournir un devis clair et adapté, selon :"
-    liste={[
-      "La complexité du travail, le temps nécessaire et les outils spécifiques",
-      "Le volume ou la surface à traiter",
-      "Le type d'équipement ou de matériaux nécessaires",
-      "La localisation ou l'accessibilité du chantier"
-    ]}
-    texteSuite="Chaque projet est discuté avec vous en amont. Je reste à votre écoute...<br>Le règlement en <strong>CESU préfinancé</strong> est possible pour les prestations <strong>Espaces Verts</strong>."
-  />
-
-  <QuestionsFrequentes
-    questions={[
-      { question: "La boxe thérapie est-elle adaptée aux débutants ?", reponse: "Oui, les séances sont adaptées à <strong>tous les niveaux</strong>..." },
-      { question: "Où se déroulent les séances ?", reponse: "Les séances ont lieu à Paimboeuf..." }
+    
+    
     ]}
   />
 
   <Slider
     slides={realisations}
-    title="Mes réalisations"
-    subtitle="Découvrez mes travaux réalisés à Massérac et autour de Redon."
-    facebookUrl="https://www.facebook.com/profile.php?id=61574426724207"
+    title="Séances de boxe thérapie"
+    subtitle="Découvrez quelques photos de séances de boxe thérapie à Saumur."
+    facebookUrl="https://www.facebook.com/profile.php?id=61561327531815"
+  />
+    
+  <QuestionsFrequentes
+    questions={[
+      { question: "C'est quoi la boxe thérapie ?", reponse: "La boxe thérapie, ce n'est pas de la compétition ni du sport intensif. C'est une approche qui utilise les gestes de la boxe (les frappes, le souffle, le mouvement) comme un outil pour libérer les émotions, évacuer le stress et se reconnecter à soi. Le corps et les émotions sont profondément liés : quand le corps se dénoue, quelque chose se libère aussi à l'intérieur." },
+      { question: "Comment se passe une séance de boxe thérapie ?", reponse: "Chaque séance est unique et adaptée à qui vous êtes. Elle combine des exercices de boxe, de la respiration, des moments d'écoute et de reconnexion à vos ressentis. Pas de niveau requis, pas de jugement. On avance à votre rythme, dans un cadre bienveillant et sécurisé." },
+      { question: "La boxe thérapie est-elle efficace ?", reponse: "Oui, à condition d'y venir avec l'envie de s'écouter. Beaucoup de participants repartent plus légers, plus ancrés, avec davantage d'énergie. Les bienfaits les plus souvent ressentis : réduction du stress, regain de confiance, meilleure gestion des émotions et reconnexion à son corps." },
+      { question: "La boxe thérapie, c'est pour qui ?", reponse: "Pour tout le monde ! Les enfants, les adolescents, les adultes, les personnes en situation de handicap. Que vous soyez sportif ou non, que vous traversiez une période difficile ou que vous cherchiez simplement à prendre soin de vous... il n'y a pas de profil type. Chaque séance est adaptée à votre situation." },
+      { question: "Comment fonctionne la boxe thérapie pour le bien-être ?", reponse: "Le principe repose sur le lien entre le corps et les émotions. En mobilisant le corps à travers les gestes de la boxe, on libère les tensions physiques et émotionnelles accumulées. Le mouvement permet d'évacuer ce que les mots ne réussissent pas toujours à exprimer : stress, colère, tristesse, épuisement." },
+      { question: "Quels sont les tarifs de la boxe thérapie ?", reponse: "Les tarifs varient selon le format choisi (séance individuelle, atelier collectif, intervention en entreprise) et la durée. Contactez-moi pour un premier échange gratuit. Je vous propose ensuite une formule adaptée à vos besoins." }
+    ]}
+  />
+  <Action 
+      titre = "Le premier coup, c'est toi qui le donnes !",
+      texte = "",
+      lienLabel = "Je prends contact",
+      lienHref = "/Contact"
   />
 
-<Etapes
-  titre="Comment ça se passe ?"
-  etapes={mesEtapes}
-  lienHref="/services"
-  lienTexte="Découvrez mes services"
-/>
 
 </BaseLayout>
