@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import HeroLeft from '../components/HeroLeft.astro';
 import TexteListe from '../components/TexteListe.astro';
 import H1EtTexte from '../components/H1etTexte.astro';
 import Etapes from '../components/Etapes.astro';
@@ -20,6 +21,7 @@ import marches from '../images/marches.jpg';
 import enduit from '../images/enduit.jpg';
 import monImage from '../images/natacha1.webp';
 import maPhoto from '../images/natacha5.webp';
+import tonImage from '../images/natacha2.webp';
 
 import béton from '../images/béton.png';
 import bricolage from '../images/bricolage.png';
@@ -78,33 +80,33 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
     lienHref={`${import.meta.env.BASE_URL}/contact`}
   />
 
+  <HeroLeft
+  titre="La boxe thérapie, c’est quoi ?"
+  texte={`
+    <p>Non, on ne vient pas ici pour se battre.</p>
 
-  <BlocTexte 
-       titre="La boxe thérapie, c'est quoi ?"
-  description="<strong>Non, on ne vient pas ici pour se battre.</strong>
-    <p>La boxe thérapie, c'est utiliser les gestes et l'énergie de la boxe : les frappes, le souffle, le mouvement,  comme un outil pour libérer ce qu'on porte à l'intérieur : les tensions, les émotions enfouies, le stress accumulé. </p>
-<p>Tout ce qui tourne en boucle et qu'on n'arrive pas à évacuer autrement.</p>
-<p>Le principe est simple : le corps et les émotions sont profondément liés.<br> Quand le corps se dénoue, quelque chose se libère aussi à l'intérieur. On repart plus léger, plus ancré, plus fort.<br>
-Ce n'est pas du sport intensif. Ce n'est pas de la compétition. Ce n'est pas réservé aux sportifs.
-C'est un espace pour souffler, lâcher prise et se reconnecter à soi,  à son propre rythme, dans un cadre bienveillant et sécurisé.</p>
-"
-  
-  
+    <p>La boxe thérapie, c’est utiliser les gestes et l’énergie de la boxe — les frappes, le souffle, le mouvement — comme un outil pour libérer ce qu’on porte à l’intérieur : les tensions, les émotions enfouies, le stress accumulé.</p>
+
+    <p>Tout ce qui tourne en boucle et qu’on n’arrive pas à évacuer autrement.</p>
+
+    <p>Le principe est simple : le corps et les émotions sont profondément liés. Quand le corps se dénoue, quelque chose se libère aussi à l’intérieur. On repart plus léger, plus ancré, plus fort.</p>
+
+    <p>Ce n’est pas du sport intensif. Ce n’est pas de la compétition. Ce n’est pas réservé aux sportifs. C’est un espace pour souffler, lâcher prise et se reconnecter à soi, à son propre rythme, dans un cadre bienveillant et sécurisé.</p>
+
+    <h3>Les bienfaits de la boxe thérapie</h3>
+    <ul>
+      <li>Évacuer le stress et les émotions bloquées.</li>
+      <li>Reprendre confiance en son corps et en soi.</li>
+     <li>Lâcher prise sans pression ni jugement.</li>
+      <li>Se reconnecter à ses ressentis.</li>
+      <li>Retrouver de l’énergie et de la vitalité.</li>
+    </ul>
+  `}
+  image={tonImage}
+  imageAlt="Séance de boxe thérapie"
 />
 
-
-  <TexteListe
-  couleurPuces='var(--color-rouge)'
-    titre="Les bienfaits de la boxe thérapie"
-    liste={[
-      "Évacuer le stress et les émotions bloquées",
-      "Reprendre confiance en son corps et en soi",
-      "Lâcher prise sans pression ni jugement",
-      "Se reconnecter à ses ressentis",
-      "Retrouver de l'énergie et de la vitalité"
-    ]}
-  />
-
+  
 
 
   <Hero
@@ -150,6 +152,21 @@ C'est un espace pour souffler, lâcher prise et se reconnecter à soi,  à son p
 />
 
 
+  <Avis
+    titre="Ils m'ont fait confiance"
+    lienTous="https://share.google/MZ0Um4UYKRJX61Nrh" 
+    avis={[
+      { texte: "Ces séances m'ont permis d'améliorer ma condition physique, renforcer mon cardio et augmenter ma confiance et l' estime de soi. De plus, j'éprouve un bien être, un équilibre psychique. Ces séances en groupe nous apportent des moments de partage et de soutien, le tout soupoudré de légèreté, de rires et d' entraide.", auteur: "Stéfany"},
+      { texte: "Praticante de la boxe thérapie en collectivité et en individuel, c'est une libération émotionnelle profonde et un épanouissement personnel. Prise de confiance, dépassement de soi, introspection assurée", auteur: "Marine Leroyer" },
+      { texte: "Des cours de boxe thérapie qui font un bien fou, autant au corps qu’au mental. On ressort boostée, plus confiante et pleine d’énergie. Natacha est incroyable : son énergie est communicative et elle sait vraiment nous embarquer. Il y a une vraie sororité dans le groupe, beaucoup de bienveillance et aucun jugement. Un moment pour soi qui fait vraiment la différence !", auteur: "Coralie"},
+      { texte: "Une rencontre au moment où j'en avais vraiment besoin. Les séances font vraiment du bien! On en redemande même en dehors des créneaux de la MJC.", auteur: "Bénédicte"},
+      { texte: "Grâce à Natacha, j’ai récupéré beaucoup de confiance en moi, je fais maintenant des choses que je n’osais pas avant. J’ai adoré les discussions avec elle pendant les cours.", auteur: "Sarah, 10 ans" },
+      { texte: "L’approche de Natacha m’a permis de reprendre contact avec mes possibles, de pointer ce qui était encore à travailler. Nous sommes, toutes les femmes, une grande communauté qui doit s’entraider et Natacha est une d’entre nous qui a décidé d’aider les autres.", auteur: "China" },
+      { texte: "Dans nos vies de femmes, on nous fait toujours sentir qu’on est un petit peu nulle et donc la boxe ça faisait des années que ça me tentait mais une fois de plus j’avais peur d’être nulle. Quand je suis tombée sur la carte de Natacha je me suis dit il faut tenter et c’est une des meilleures choses que j’ai faite. La bienveillance, l’écoute et les bons conseils de Natacha ainsi que les pattes d’ours 🤣 ont fait que je ne suis pas prête d’oublier cette première séance. Après les séances individuelles je me suis inscrite à la MJC et toutes les semaines je fais une séance en groupe. Avec des filles super 👍 Cette activité me permet de me sentir plus solide, plus belle et alors plus du tout nulle ❤️. ", auteur: "Céline"  }
+
+    ]}
+  />
+
 
   <BlocTexte 
        titre="Mes tarifs"
@@ -165,25 +182,7 @@ C'est un espace pour souffler, lâcher prise et se reconnecter à soi,  à son p
   boutonLien={`${import.meta.env.BASE_URL}/contact`}
   
 />
-  
 
-
-  <Avis
-    titre="Ils m'ont fait confiance"
-    lienTous="https://share.google/MZ0Um4UYKRJX61Nrh" 
-    avis={[
-      { texte: "Ces séances m'ont permis d'améliorer ma condition physique, renforcer mon cardio et augmenter ma confiance et l' estime de soi. De plus, j'éprouve un bien être ,un équilibre psychique. Ces séances en groupe nous apportent des moments de partage et de soutien, le tout soupoudré de légèreté ,de rires et d' entraide.", auteur: "Stéfany"},
-      { texte: "Une rencontre au moment où j'en avais vraiment besoin. Les séances font vraiment du bien! On en redemande même en dehors des créneaux de la MJC.", auteur: "Bénédicte"},
-      { texte: "Des cours de boxe thérapie qui font un bien fou, autant au corps qu’au mental. On ressort boostée, plus confiante et pleine d’énergie. Natacha est incroyable : son énergie est communicative et elle sait vraiment nous embarquer. Il y a une vraie sororité dans le groupe, beaucoup de bienveillance et aucun jugement. Un moment pour soi qui fait vraiment la différence !", auteur: "Coralie"},
-      { texte: "Dans nos vies de femmes, on nous fait toujours sentir qu’on est un petit peu nulle et donc la boxe ça faisait des années que ça me tentait mais une fois de plus j’avais peur d’être nulle. Quand je suis tombée sur la carte de Natacha je me suis dit il faut tenter et c’est une des meilleures choses que j’ai faite. La bienveillance, l’écoute et les bons conseils de Natacha ainsi que les pattes d’ours 🤣 ont fait que je ne suis pas prête d’oublier cette première séance. Après les séances individuelles je me suis inscrite à la MJC et toutes les semaines je fais une séance en groupe. Avec des filles super 👍 Cette activité me permet de me sentir plus solide, plus belle et alors plus du tout nulle ❤️. ", auteur: "Céline"  },
-      { texte: "Praticante de la boxe thérapie en collectivité et en individuel, c'est une libération émotionnelle profonde et un épanouissement personnel. Prise de confiance, dépassement de soi, introspection assurée", auteur: "Marine Leroyer" },
-      { texte: "Grâce à Natacha, j’ai récupéré beaucoup de confiance en moi, je fais maintenant des choses que je n’osais pas avant. J’ai adoré les discussions avec elle pendant les cours.", auteur: "Sarah, 10 ans" },
-      { texte: "L’approche de Natacha m’a permis de reprendre contact avec mes possibles, de pointer ce qui était encore à travailler. Nous sommes, toutes les femmes, une grande communauté qui doit s’entraider et Natacha est une d’entre nous qui a décidé d’aider les autres.", auteur: "China" }
-
-    
-    
-    ]}
-  />
 
   <Slider
     slides={realisations}

@@ -38,64 +38,118 @@ const {
   
 </section>
 
+<style>
 
-    <style>
 .avis {
   width: 100%;
-  padding-block: 3rem;
+  padding: 3rem 1.5rem;
   text-align: center;
-  background-color: var(--color-sauge);
+  background-color: var(--color-blanc-lin);
   color: var(--color-gris-fonce);
 }
 
+.avis h2 {
+  margin-bottom: 2rem;
+}
 
 .avis-list {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 32px auto 0;
+  align-items: start;
 }
 
 .avis-item {
-  max-width: 260px;
-  font-style: italic;
-  background-color: var(--color-blanc-lin);
-  border-radius: 10px;
-
-
+  background-color: var(--color-sauge);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.avis-item span {
-  display: block;
-  margin-top: 10px;
-  font-weight: 600;
-}
 .stars {
   color: #f5b301;
   font-size: 1.1rem;
-  margin-bottom: 8px;
+  margin-bottom: 0.75rem;
+  letter-spacing: 2px;
 }
+
+.avis-item p {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.6;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.avis-item span {
+   display: block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--color-gris-fonce);
+}
+
 .avis-source {
-  margin-top: 32px;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 .avis-source a {
   opacity: 1;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
+  text-decoration: none;
 }
+
+.stars,
+.avis-item span {
+  text-align: center;
+}
+
+.avis-source a:hover {
+  text-decoration: underline;
+}
+
+.avis-item p::before {
+  content: "« ";
+  color: var(--color-rouge);
+  font-size: 1.4rem;
+}
+
+.avis-item p::after {
+  content: " »";
+  color: var(--color-rouge);
+  font-size: 1.4rem;
+}
+
 @media (max-width: 700px) {
+  .avis {
+    padding: 2.5rem 1rem;
+  }
+
+  .avis-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .avis-item {
+    min-height: auto;
+    padding: 1.5rem 1.25rem;
+  }
+
   .avis-source {
-    padding: 0 2rem;
+    padding: 0 1rem;
     font-size: 0.85rem;
     line-height: 1.4;
   }
+
   .avis-source a {
     display: inline-block;
     word-break: keep-all;
   }
 }
-    </style>
+</style>
