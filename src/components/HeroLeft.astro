@@ -49,7 +49,7 @@ const {
 .hero {
   background-color: var(--color-sauge);
   display: flex;
-  flex: 1;
+  gap: 2rem;
   margin: 0;
   padding: 0 10%;
   justify-content: space-between;
@@ -60,24 +60,29 @@ const {
   display: flex;
   flex-direction: column;
   align-items: start;
-  max-width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
   margin: 0;
-  padding: 5%;
+  padding: 2rem 0;
   color: var(--color-gris-fonce);
 }
 
 .hero-img {
   display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
 }
 
 .hero-img img {
+  width: 100%;
   max-width: 500px;
-  width: auto;
   height: auto;
-  margin: 30px;
+  margin: 0;
   border: 1px solid #000;
   border-radius: 12px;
 }
+
 .secondary-text :global(p) {
   margin-bottom: 1rem;
 }

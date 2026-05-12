@@ -54,11 +54,12 @@ const {
 
 .avis-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 24px;
   max-width: 1100px;
   margin: 32px auto 0;
   align-items: start;
+  min-width: 0;
 }
 
 .avis-item {
@@ -67,6 +68,7 @@ const {
   padding: 1.75rem 1.5rem;
   text-align: left;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  min-width: 0;
 }
 
 .stars {

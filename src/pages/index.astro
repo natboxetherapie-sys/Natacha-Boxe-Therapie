@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import HeroLeft from '../components/HeroLeft.astro';
-import TexteListe from '../components/TexteListe.astro';
-import H1EtTexte from '../components/H1etTexte.astro';
 import Etapes from '../components/Etapes.astro';
 import BlocTexte from '../components/BlocTexte.astro';
 import Avis from '../components/Avis.astro';
@@ -13,21 +11,11 @@ import Action from '../components/Action.astro';
 
 import { siteConfig } from '../config/site';
 
-import cloture from '../images/cloture girondine.jpg';
-import muret from '../images/muret.jpeg';
-import portail from '../images/portail.jpeg';
-import fermettes from '../images/fermettes.jpg';
-import marches from '../images/marches.jpg';
-import enduit from '../images/enduit.jpg';
+
 import monImage from '../images/natacha1.webp';
 import maPhoto from '../images/natacha5.webp';
 import tonImage from '../images/natacha2.webp';
 
-import béton from '../images/béton.png';
-import bricolage from '../images/bricolage.png';
-import clôture from '../images/clôture.png';
-import jardin from '../images/jardin.png';
-import minipelle from '../images/minipelle.png';
 
 import natacha2 from '../images/natacha2.webp';
 import natacha3 from '../images/natacha3.webp';
@@ -35,7 +23,6 @@ import natacha4 from '../images/natacha4.webp';
 
 
 
-import zone from '../images/zone.webp';
 
 
 const realisations = [
@@ -67,10 +54,10 @@ const mesEtapes = [
     titre="Natacha Boxe Thérapie - Saumur"
     texte="<strong>Libérer, Renforcer, transformer</strong><br>
             <em>Corps, coeur et mental en harmonie</em>
-          <p>Boxe thérapeute certifiée à Saumur et dans un rayon de 20km</p>
+          <p><strong>Boxe thérapeute</strong> certifiée à Saumur et dans un rayon de 20km</p>
 
 <p>Tu en as plein le corps, plein le coeur. Tu as une furieuse envie d’aller mieux.<br>
-La boxe thérapie, c’est un espace bienveillant, sans jugement ni compétition, où le mouvement libère ce que les mots ne réussissent pas à dire.</p>
+La <strong>boxe thérapie</strong>, c’est un espace bienveillant, sans jugement ni compétition, où le mouvement libère ce que les mots ne réussissent pas à dire.</p>
 
 Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
 "
@@ -85,21 +72,21 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
   texte={`
     <p>Non, on ne vient pas ici pour se battre.</p>
 
-    <p>La boxe thérapie, c’est utiliser les gestes et l’énergie de la boxe — les frappes, le souffle, le mouvement — comme un outil pour libérer ce qu’on porte à l’intérieur : les tensions, les émotions enfouies, le stress accumulé.</p>
+    <p>La <strong>boxe thérapie</strong>, c’est utiliser les gestes et l’énergie de la boxe (les frappes, le souffle, le mouvement) comme un outil pour libérer ce qu’on porte à l’intérieur : les tensions, les émotions enfouies, le stress accumulé.</p>
 
     <p>Tout ce qui tourne en boucle et qu’on n’arrive pas à évacuer autrement.</p>
 
-    <p>Le principe est simple : le corps et les émotions sont profondément liés. Quand le corps se dénoue, quelque chose se libère aussi à l’intérieur. On repart plus léger, plus ancré, plus fort.</p>
+    <p>Le principe est simple : <strong>le corps et les émotions</strong> sont profondément liés. Quand le corps se dénoue, quelque chose se libère aussi à l’intérieur. On repart plus léger, plus ancré, plus fort.</p>
 
-    <p>Ce n’est pas du sport intensif. Ce n’est pas de la compétition. Ce n’est pas réservé aux sportifs. C’est un espace pour souffler, lâcher prise et se reconnecter à soi, à son propre rythme, dans un cadre bienveillant et sécurisé.</p>
+    <p>Ce n’est pas du sport intensif. Ce n’est pas de la compétition. Ce n’est pas réservé aux sportifs. C’est un <strong>espace pour souffler, lâcher prise et se reconnecter à soi</strong>, à son propre rythme, dans un <strong>cadre bienveillant et sécurisé</strong>.</p>
 
     <h3>Les bienfaits de la boxe thérapie</h3>
     <ul>
-      <li>Évacuer le stress et les émotions bloquées.</li>
-      <li>Reprendre confiance en son corps et en soi.</li>
-     <li>Lâcher prise sans pression ni jugement.</li>
-      <li>Se reconnecter à ses ressentis.</li>
-      <li>Retrouver de l’énergie et de la vitalité.</li>
+      <li>Évacuer le stress et les émotions bloquées</li>
+      <li>Reprendre confiance en son corps et en soi</li>
+     <li>Lâcher prise sans pression ni jugement</li>
+      <li>Se reconnecter à ses ressentis</li>
+      <li>Retrouver de l’énergie et de la vitalité</li>
     </ul>
   `}
   image={tonImage}
@@ -113,28 +100,28 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
     titre="À qui s'adressent mes séances ?"
     texte="<h3>Les enfants et les adolescents</h3>
         <p>Un espace pour bouger, se défouler et reprendre confiance.<br>
-        La boxe thérapie est une activité accessible à tous les jeunes, quel que soit leur niveau sportif ou leur rapport au mouvement. <br>
-        Chaque séance individuelle est pensée pour avancer à son rythme, sans compétition ni pression.<br> J'accompagne les enfants et les adolescents à Saumur et alentours, en adaptant chaque séance à leur profil.
+        La <strong>boxe thérapie</strong> est une activité accessible à tous les jeunes, quel que soit leur niveau sportif ou leur rapport au mouvement. <br>
+        Chaque séance individuelle est pensée pour <strong>avancer à son rythme</strong>, sans compétition ni pression.<br> J'accompagne les enfants et les adolescents à <strong>Saumur et alentours</strong>, en adaptant chaque séance à leur profil.
 
         <h3>Les femmes et les hommes en quête de mieux-être</h3>
-        <p>Pour retrouver de l'énergie, lâcher prise et se reconnecter avec soi-même.<br>
-        Après une période difficile ( maladie chronique, burn-out, séparation, deuil...) ou simplement quand on a besoin de souffler, la boxe thérapie offre un espace doux et dynamisant pour évacuer les émotions accumulées et retrouver de l'élan.<br>
-         Je propose un accompagnement adapté à ton état physique et émotionnel, à ton rythme.</p>
+        <p>Pour <strong>retrouver de l'énergie, lâcher prise et se reconnecter avec soi-même</strong>.<br>
+        Après une période difficile ( maladie chronique, burn-out, séparation, deuil...) ou simplement quand on a <strong>besoin de souffler</strong>, la <strong>boxe thérapie</strong> offre un espace doux et dynamisant pour évacuer les <strong>émotions</strong> accumulées et retrouver de l'élan.<br>
+         Je propose un <strong>accompagnement adapté</strong> à ton état physique et émotionnel, à ton rythme.</p>
 
       <h3> Les entreprises et les équipes</h3>
-      <p>Pour un team building qui crée un vrai lien.<br>
-      J'interviens auprès des entreprises et des équipes avec des ateliers sur mesure qui travaillent en profondeur la cohésion, la confiance et la gestion des émotions.<br> Accessible à tous, aucun niveau sportif requis.<br>
-       Une activité originale et mémorable, à Saumur et dans un rayon de 20 km, pour que la bonne énergie du jour J se prolonge bien au-delà.
+      <p>Pour un <strong>team building</strong> qui crée un vrai lien.<br>
+      J'interviens auprès des <strong>entreprises</strong> et des équipes avec des <strong>ateliers sur mesure</strong> qui travaillent en profondeur la cohésion, la confiance et la <strong>gestion des émotions</strong>.<br> Accessible à tous, aucun niveau sportif requis.<br>
+       Une activité originale et mémorable, à <strong>Saumur et dans un rayon de 20 km</strong>, pour que la bonne énergie du jour J se prolonge bien au-delà.
 
       <h3>Les enfants à besoins spécifiques</h3>
-      <p>Une activité adaptée, sans avoir à tout réexpliquer.<br>
-      Je travaille au quotidien avec des jeunes en situation de handicap à l'IME le Coteau de Saumur. Je connais les TSA et le handicap dans sa diversité, je comprends les besoins spécifiques, j'adapte chaque séance en conséquence.<br> Un cadre stable, des rituels clairs, et une approche pensée pour que chaque enfant puisse avancer sereinement, à sa façon.</p>
+      <p>Une activité adaptée à tous<br>
+      Je travaille au quotidien avec des <strong>jeunes en situation de handicap</strong> à l'IME le Coteau de Saumur. Je connais les TSA et le handicap dans sa diversité, je comprends les <strong>besoins spécifiques</strong>, j'adapte chaque séance en conséquence.<br> Un cadre stable, des rituels clairs, et une approche pensée pour que chaque enfant puisse avancer sereinement, à sa façon.</p>
 "
   
     image={maPhoto}
     imageAlt="Natacha Boxe Thérapie Saumur"
     lienLabel="J'aimerais en savoir plus"
-    lienHref={`${import.meta.env.BASE_URL}/contact`}
+    lienHref={`${import.meta.env.BASE_URL}/apropos`}
   />
 
 
@@ -143,7 +130,7 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
 
 <Etapes
   titre="Comment se déroule une séance ?"
-  intro="Chaque accompagnement commence par un échange téléphonique pour se mettre d’accord sur tes besoins et tes attentes.<br> 
+  intro="Chaque accompagnement commence par un échange téléphonique pour se mettre d’accord sur <strong>tes besoins et tes attentes</strong>.<br> 
     Je fournis tout le matériel, il n'y a rien à prévoir de ton côté.<br>
     Les séances se déroulent à domicile, en extérieur ou directement dans vos locaux."
 
@@ -172,11 +159,11 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
        titre="Mes tarifs"
   description=" <h3>Séance individuelle : 50 €</h3>
     
-    Un accompagnement personnalisé pour libérer les tensions, te reconnecter à toi-même et avancer à ton rythme. <br>
+    Un <strong>accompagnement personnalisé</strong> pour <strong>libérer les tensions, te reconnecter à toi-même et avancer à ton rythme.</strong> <br>
     Chaque séance s'adapte à tes besoins, dans le respect de ton corps, de tes émotions et de ton histoire.<br>
     <h3>Ateliers collectifs, associations et entreprises</h3>
     <strong>Tarif sur devis</strong>
-    <p>J'interviens auprès de différents publics — adolescents, adultes, structures médico-sociales, entreprises — avec des séances adaptées aux objectifs et aux besoins de chacun. </p>
+    <p>J'interviens auprès de différents publics — adolescents, adultes, structures médico-sociales, entreprises — avec des <strong>séances adaptées</strong> aux objectifs et aux besoins de chacun. </p>
 "
   boutonTexte="Contacte-moi pour échanger autour de ton projet"
   boutonLien={`${import.meta.env.BASE_URL}/contact`}

@@ -42,7 +42,11 @@ h1, h2, h3, strong {
   font-size: inherit;
 }
 
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 a {
   text-decoration: none;

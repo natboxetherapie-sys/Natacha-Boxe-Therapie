@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilAriane from '../components/FilAriane.astro';
-import H1etTexte from '../components/H1etTexte.astro';
+import Hero from '../components/Hero.astro';
 import Formulaire from '../components/Formulaire.astro';
+import Zone from '../components/Zone.astro';
 import { siteConfig } from '../config/site.ts';
-
+import monImage from '../images/gants.webp';
+import zone from '../images/zone.png';
 const schema = [
   {
     "@context": "https://schema.org",
@@ -34,12 +36,35 @@ const schema = [
     { label: "Accueil", href: `${import.meta.env.BASE_URL}` },
     { label: "Contact" }
   ]} />
-  <H1etTexte
-    titre="Contacter Natacha"
-    texte="Une question sur la <strong>boxe thérapie</strong> ?"
+  
+  <Hero 
+     titre="Infos pratiques et contact"
+    texte={`Une question, un projet, envie d'en savoir plus ? Écris-moi ou appelle-moi directement. Je réponds à chaque message avec attention.
+    📞 Par téléphone
+06 84 55 69 02
+📧 Par email
+nat.boxetherapie@gmail.com
+📱 Sur les réseaux
+Instagram : @natacha.boxetherapie
+Facebook : natacha.boxetherapie
+    `}
+    image={monImage}
+    imageAlt="image de Natacha, boxe thérapeute à saumur"
+    lienLabel="Découvrez la boxe thérapie"
+    lienHref={`${import.meta.env.BASE_URL}`}
   />
+
+
   <Formulaire
     action="/traitement-natacha"
     placeholderMessage="Bonjour ! Décrivez ici votre demande..."
   />
+
+  <Zone 
+      titre="Ma zone"
+      image={zone}
+      imageAlt="carte de la zone d'intervention de Natacha Boxe thérapie à Saumur"
+      carteUrl="mettre le lien google maps"
+  />
+
 </BaseLayout>
