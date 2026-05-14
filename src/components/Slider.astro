@@ -1,7 +1,7 @@
 ---
 import logofb from '../images/logofb.png';
 interface Props {
-  slides: { src: string; alt: string; caption: string; width: number; height: number }[];
+  slides: { src: string; alt: string; caption?: string; width: number; height: number }[];
   title?: string;
   subtitle?: string;
   facebookUrl?: string;
@@ -22,7 +22,7 @@ const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astr
         {slides.map((slide, i) => (
           <div class="slide" data-index={i}>
             <img src={slide.src} alt={slide.alt} width={slide.width} height={slide.height} loading="lazy" />
-            <div class="slide-caption">{slide.caption}</div>
+             {slide.caption && <div class="slide-caption">{slide.caption}</div>}  
           </div>
         ))}
       </div>
@@ -123,6 +123,7 @@ const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astr
     height: 100%;
     object-fit: cover;
     display: block;
+    object-position: top center;
   }
 
   .slide-caption {
