@@ -5,13 +5,12 @@ import logo from '../images/logo.png';
 
 const {
   altLogo = "Logo",
-  logoHeight = 150
 } = Astro.props;
 ---
 <header>
 
 <div class="header-logo">
-  <img src={logo.src} alt={altLogo} width="auto" height={logoHeight}>
+  <img src={logo.src} alt={altLogo} width="250" height="210">
 </div>
 
 <Navigation>
@@ -32,6 +31,10 @@ header {
   background-color: var(--color-blanc-lin) ;
   display: flex;
   padding: 1rem 20rem;
+}
+.header-logo img {
+  height: 220px;
+  width: auto;
 }
 @media (max-width: 900px) {
   header {
