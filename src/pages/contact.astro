@@ -45,27 +45,24 @@ const schema = [
     texte={`<h2>Une question, un projet, envie d'en savoir plus ?</h2>
     <p>Écris-moi ou appelle-moi directement. Je réponds à chaque message avec attention.</p>
     📞 Par téléphone : 06 84 55 69 02 <br>
-    📧 Par email : nat.boxetherapie@gmail.com <br>
-    <p>Sur les réseaux :</p>
-<p>
-   <a href="https://www.instagram.com/natacha.boxetherapie" target="_blank" rel="noopener">
-        <img src="${base}icons/instagram.svg" alt="Instagram" width="22" height="22" style="vertical-align:middle; margin-right:6px;">
-        @natacha.boxetherapie
-      </a>
-    </p>
-    <p>
-      <a href="https://www.facebook.com/natacha.boxetherapie" target="_blank" rel="noopener">
-        <img src="${base}icons/facebook.svg" alt="Facebook" width="22" height="22" style="vertical-align:middle; margin-right:6px;">
-        natacha.boxetherapie
-      </a>
-</p>
+    📧 Par email : nat.boxetherapie@gmail.com </p>
+    <div class="reseaux">
+  <a href="https://www.instagram.com/natacha.boxetherapie" target="_blank" rel="noopener">
+    <img src="__BASE__icons/instagram.svg" alt="Instagram" width="22" height="22" />
+    @natacha.boxetherapie
+  </a> <br>
+  <a href="https://www.facebook.com/natacha.boxetherapie" target="_blank" rel="noopener">
+    <img src="__BASE__icons/facebook.svg" alt="Facebook" width="22" height="22" />
+    natacha.boxetherapie
+  </a>
+</div>
     `}
     image={monImage}
     imageAlt="image de Natacha, boxe thérapeute à saumur"
     lienLabel="Découvrez la boxe thérapie"
     lienHref={`${import.meta.env.BASE_URL}`}
   />
-
+    
 
   <Formulaire
     action="/traitement-natacha"
