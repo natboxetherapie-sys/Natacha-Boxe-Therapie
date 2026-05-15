@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import HeroLeft from '../components/HeroLeft.astro';
+import BlocTexteImage from '../components/BlocTexteImage.astro';
 import Etapes from '../components/Etapes.astro';
 import BlocTexte from '../components/BlocTexte.astro';
 import Avis from '../components/Avis.astro';
@@ -23,12 +24,6 @@ import atelier from '../images/atelier.webp';
 import atelier2 from '../images/atelier2.webp';
 import atelier3 from '../images/atelier3.webp';
 import atelier5 from '../images/atelier5.webp';
-
-
-
-
-
-
 
 
 const realisations = [
@@ -101,11 +96,9 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
   image={tonImage}
   imageAlt="Séance de boxe thérapie"
 />
-
   
-
-
-  <Hero
+  
+<BlocTexteImage
     titre="À qui s'adressent mes séances ?"
     texte="<h3>Les enfants et les adolescents</h3>
         <p>Un espace pour bouger, se défouler et reprendre confiance.<br>
@@ -132,9 +125,6 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
     lienLabel="J'aimerais en savoir plus"
     lienHref={`${import.meta.env.BASE_URL}/apropos`}
   />
-
-
-
 
 
 <Etapes

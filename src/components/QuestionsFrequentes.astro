@@ -19,18 +19,22 @@ const {
   <h2>{titre}</h2>
   {questions.map((item) => (
     <div class="faq-item">
-      <div class="faq-question">
-        <strong>{item.question}</strong>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">
-        <p set:html={item.reponse} />
-      </div>
-    </div>
+  <h3 class="faq-question">
+    <button type="button" class="faq-question-btn">
+      <span>{item.question}</span>
+      <span class="faq-toggle">+</span>
+    </button>
+  </h3>
+  <div class="faq-answer">
+    <p set:html={item.reponse} />
+  </div>
+</div>
   ))}
 </section>
 
     <style>
+
+
 .faq-section {
   background-color: var(--color-sauge);
   padding: 2% 10%;
@@ -52,6 +56,10 @@ const {
 }
 
 .faq-question {
+  margin: 0;
+}
+
+.faq-question-btn {
   width: 100%;
   text-align: left;
   padding: 1rem 1.25rem;

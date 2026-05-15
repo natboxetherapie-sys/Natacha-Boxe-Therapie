@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FilAriane from '../components/FilAriane.astro';
-import H1etTexte from '../components/H1etTexte.astro';
 import Hero from '../components/Hero.astro';
 import MembresEquipe from '../components/MembresEquipe.astro';
 import { siteConfig } from '../config/site.ts';
@@ -42,10 +41,9 @@ const schema = [
     { label: "À propos" }
   ]} />
 
-  <H1etTexte
+  <Hero 
     titre="Natacha : Éducatrice, Boxeuse et Boxe Thérapeute"
-    texte={`
-    <p>J'ai poussé la porte d'une salle de boxe à 14 ans. Sans vraiment le savoir, ce jour-là, j'ai trouvé bien plus qu'un sport. J'ai trouvé un endroit où ressentir mon <strong>corps comme une force, où me dépasser, où être moi</strong>. J'ai pratiqué pendant des années, jusqu'au niveau semi-professionnel, et cette passion ne m'a plus jamais quittée.</p>
+    texte={`<p>J'ai poussé la porte d'une salle de boxe à 14 ans. Sans vraiment le savoir, ce jour-là, j'ai trouvé bien plus qu'un sport. J'ai trouvé un endroit où ressentir mon <strong>corps comme une force, où me dépasser, où être moi</strong>. J'ai pratiqué pendant des années, jusqu'au niveau semi-professionnel, et cette passion ne m'a plus jamais quittée.</p>
 
     <p>En parallèle, la vie m'a menée vers un autre chemin, celui de l'humain.</p>
 
@@ -54,16 +52,13 @@ const schema = [
     <p>Et puis c'est là, entre la boxe et le terrain, qu'une évidence s'est imposée.<br>
     <strong>Le corps ne ment pas. Les émotions vivent en lui.<br>
     C'est par le corps qu'on peut libérer les émotions.</strong></p>
-  `}
-  />
-  
-  <Hero 
-    titre="La naissance d'une conviction"
-    texte={`
+
+
+<h2>La naissance d'une conviction</h2>
     <p>En 2021, je commence à creuser cette intuition. Je me forme, j'échange, j'imagine comment allier ma passion pour la boxe et mon expérience d'éducatrice. En juin 2024, j'obtiens ma <strong>certification de Boxe Thérapeute</strong> :  une victoire dont je suis encore très fière. En septembre 2024, mes premières séances en tant que boxe thérapeute ont lieu.</p>
 <p>Ce que j'ai compris depuis : ce que tu portais en silence peut trouver une issue. Ton corps peut se dénouer. Ton mental peut se libérer. Et tu ressors avec une évidence que tu avais oubliée:  ta propre force.</p>
 
-<h3>Ce en quoi je crois</h3>
+<h2>Ce en quoi je crois</h2>
 <p>Je crois que tout le monde mérite un espace pour <strong>se sentir mieux</strong>, quel que soit son âge, son corps ou son histoire.</p>
 <p>Pas besoin d'être sportif pour commencer. Pas besoin d'être "bien" pour frapper.<br>
 Je crois que le corps est souvent le chemin le plus court vers l'apaisement.<br>
@@ -71,7 +66,7 @@ Et que chaque émotion mérite d'être entendue, pas enfouie.</p>
 <p>Mon rôle ? Déverrouiller ce qui était coincé.</p>
 <p>Loin des séances formatées, loin des performances imposées,  juste un espace clair, bienveillant, fait pour toi.</p>
 
-<h3>Aujourd'hui</h3>
+<h2>Aujourd'hui</h2>
 <p>J'accompagne des <strong>enfants, des adolescents, des adultes</strong>, chacun avec son histoire, ses émotions, son rythme. À <strong>Saumur et dans un rayon de 20 km</strong>, en <strong>séance individuelle ou en atelier collectif</strong>, chez toi, en extérieur ou au sein de ta structure.</p>
 <p>Que tu traverses une période difficile, que tu cherches à te reconnecter à toi-même, ou que tu aies simplement une <strong>furieuse envie d'aller mieux</strong> :  tu es exactement à ta place ici.</p>
 `}
