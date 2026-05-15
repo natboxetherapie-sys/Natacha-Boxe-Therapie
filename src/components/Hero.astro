@@ -32,8 +32,6 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
   <div class="text-hero">
     <div class="main-text"><h2>{titre}</h2></div>
 <div class="secondary-text" set:html={texteAvecBase} />
-<!-- debug temporaire : -->
-<p style="color:red; font-size:12px;">BASE = {base}</p>
     <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
   </div>
   <div class="hero-img">
