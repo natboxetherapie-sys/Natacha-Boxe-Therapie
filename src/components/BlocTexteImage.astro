@@ -2,12 +2,12 @@
 import type { ImageMetadata } from 'astro';
 
 interface Props {
-  titre: string;
+  titre?: string;
   texte: string;
   lienLabel?: string;
   lienHref?: string;
-  image: ImageMetadata;
-  imageAlt: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
   imageWidth?: number;
   imageHeight?: number;
 }
@@ -15,8 +15,8 @@ interface Props {
 const {
   titre,
   texte,
-  lienLabel = "Découvrez mes services",
-  lienHref = `${import.meta.env.BASE_URL}/services`,
+  lienLabel,
+  lienHref,
   image,
   imageAlt,
   imageWidth = 386,
@@ -30,19 +30,25 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
 
 <div class="hero">
   <div class="text-hero">
+      {titre && (
     <div class="main-text"><h2>{titre}</h2></div>
+    )}
 <div class="secondary-text" set:html={texteAvecBase} />
-    <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
+    {lienLabel && lienHref && (
+  <a href={lienHref} class="bouton-fonce">{lienLabel}</a>
+    )}
   </div>
+  {image && (
   <div class="hero-img">
     <img
       src={image.src}
-      alt={imageAlt}
+      alt={imageAlt ?? ""}
       width={imageWidth}
       height={imageHeight}
       loading="lazy"
-    >
+    />
   </div>
+  )}
 </div>
 
 <style>

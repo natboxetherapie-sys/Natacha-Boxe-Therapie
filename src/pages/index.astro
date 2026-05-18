@@ -15,32 +15,47 @@ import { siteConfig } from '../config/site';
 
 import monImage from '../images/natacha1.webp';
 import maPhoto from '../images/atelier4.webp';
-import tonImage from '../images/natacha2.webp';
+import tonImage from '../images/atelier8.webp';
 
 
 import natacha3 from '../images/natacha3.webp';
 import natacha4 from '../images/natacha4.webp';
+import natacha6 from '../images/natacha4.webp';
+import natacha8 from '../images/natacha4.webp';
 import atelier from '../images/atelier.webp';
 import atelier2 from '../images/atelier2.webp';
 import atelier3 from '../images/atelier3.webp';
 import atelier5 from '../images/atelier5.webp';
+import atelier6 from '../images/atelier5.webp';
+import atelier7 from '../images/atelier5.webp';
+import atelier9 from '../images/atelier5.webp';
+import atelier10 from '../images/atelier5.webp';
+import atelier11 from '../images/atelier5.webp';
+
+
 
 
 const realisations = [
   { src: natacha3.src, alt: "Natacha Jarry, boxe thérapeute à Saumur", width: 500, height: 333 },
   { src: natacha4.src, alt: "Natacha seule en train de boxer", width: 500, height: 333 },
+  { src: natacha6.src, alt: "moment de sororité Natacha boxe thérapie", width: 600, height: 399 },
+  { src: natacha8.src, alt: "Natacha boxe et miroir", width: 900, height: 600 },
   { src: atelier.src, alt: "atelier de boxe thérapie à Saumur", width: 450, height: 600 },
   { src: atelier2.src, alt: "photo d'un atelier de boxe thérapie à Saumur", width: 350, height: 487 },
   { src: atelier3.src, alt: "image d'une séance boxe thérapie avec Natacha", width: 450, height: 600 },
-  { src: atelier5.src, alt: "atelier de boxe thérapie à Saumur", width:350, height: 466 }
-
+  { src: atelier5.src, alt: "une enfant lors d'un atelier de boxe thérapie à Saumur", width:350, height: 466 },
+  { src: atelier6.src, alt: "Natacha et une élève en boxe thérapie à Saumur", width:600, height: 900 },
+  { src: atelier7.src, alt: "atelier collectif de boxe thérapie à Saumur", width:399, height: 600 },
+  { src: atelier11.src, alt: "atelier avec Natacha boxe thérapie à Saumur", width:399, height: 600 },
+  { src: atelier9.src, alt: "Natacha boxe thérapie à Saumur", width:600, height: 900 },
+  { src: atelier10.src, alt: "séance avec Natacha de boxe thérapie à Saumur", width:600, height: 900 },
 ];
 
 const mesEtapes = [
   { titre: "On se rencontre", texte: "Un premier échange pour discuter de tes besoins, de ton profil et de tes objectifs. C'est là que tout commence." },
   { titre: "Je construis ta séance", texte: "Je prépare un programme sur-mesure, adapté à tes besoins et à ce que tu traverses, que tu viennes seul(e), en groupe ou en équipe." },
   { titre: "On se lance", texte: "Une séance qui allie mouvement et écoute. Un espace pour lâcher prise et se reconnecter à soi." },
-  { titre: "On fait le point", texte: "Après chaque séance, on échange sur les ressentis. J'ajuste si besoin, pour que tu avances à ton rythme, vers tes objectifs." },
+  { titre: "On fait le point", texte: "Après chaque séance, on échange sur les ressentis. J'ajuste si besoin, pour que tu avances pas à pas, vers tes objectifs." },
 
 ];
 ---
@@ -60,7 +75,7 @@ const mesEtapes = [
             <em>Corps, coeur et mental en harmonie</em>
           <p><strong>Boxe thérapeute</strong> certifiée à Saumur et dans un rayon de 20km</p>
 
-<p>Tu sens que ça déborde, dans ton corps, dans ta tête, dans ton coeur.<br> Tu as une furieuse envie d’aller mieux.</p>
+<p>Tu ressens le besoin de te retrouver, de respirer et d'avancer.</p>
 <p>La <strong>boxe thérapie</strong>, c’est un espace bienveillant, sans jugement ni compétition, où le mouvement libère ce que les mots ne réussissent pas à dire.</p>
 
 Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
@@ -76,7 +91,7 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
   texte={`
     <p>Non, on ne vient pas ici pour se battre.</p>
 
-    <p>La <strong>boxe thérapie</strong>, c’est utiliser les gestes et l’énergie de la boxe (les frappes, le souffle, le mouvement) comme un outil pour libérer ce qu’on porte à l’intérieur : les tensions, les émotions enfouies, le stress accumulé.</p>
+    <p>La <strong>boxe thérapie</strong>, c’est utiliser le mouvement, le souffle et l'énergie du corps comme un outil pour libérer ce qu’on porte à l’intérieur : les tensions, les émotions enfouies, le stress accumulé.</p>
 
     <p>Tout ce qui tourne en boucle et qu’on n’arrive pas à évacuer.</p>
 
@@ -101,16 +116,26 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
 <BlocTexteImage
     titre="À qui s'adressent mes séances ?"
     texte="<h3>Les enfants et les adolescents</h3>
-        <p>Un espace pour bouger, se défouler et reprendre confiance.<br>
+        <p>Un espace bienveillant pour exprimer ses émotions et reprendre confiance.<br>
         La <strong>boxe thérapie</strong> est une activité accessible à tous les jeunes, quel que soit leur niveau sportif ou leur rapport au mouvement. <br>
         Chaque séance individuelle est pensée pour <strong>avancer à son rythme</strong>, sans compétition ni pression.<br> J'accompagne les enfants et les adolescents à <strong>Saumur et alentours</strong>, en adaptant chaque séance à leur profil.
 
         <h3>Les femmes et les hommes en quête de mieux-être</h3>
         <p>Pour <strong>retrouver de l'énergie, lâcher prise et se reconnecter avec soi-même</strong>.<br>
         Après une période difficile ( maladie chronique, burn-out, séparation, deuil...) ou simplement quand on a <strong>besoin de souffler</strong>, la <strong>boxe thérapie</strong> offre un espace doux et dynamisant pour évacuer les <strong>émotions</strong> accumulées et retrouver de l'élan.<br>
-         Je propose un <strong>accompagnement adapté</strong> à ton état physique et émotionnel, à ton propre tempo.</p>
+         Je propose un <strong>accompagnement adapté</strong> à ton état physique et émotionnel, à ton propre tempo.</p>"
 
-      <h3> Les entreprises et les équipes</h3>
+     
+  
+    image={maPhoto}
+    imageAlt="Natacha Boxe Thérapie Saumur"
+   
+  />
+
+
+<BlocTexteImage
+    
+     texte="<h3> Les entreprises et les équipes</h3>
       <p>Pour un <strong>team building</strong> qui crée un vrai lien.<br>
       J'interviens auprès des <strong>entreprises</strong> et des équipes avec des <strong>ateliers sur mesure</strong> qui travaillent en profondeur la cohésion, la confiance et la <strong>gestion des émotions</strong>.<br> Accessible à tous, aucun niveau sportif requis.<br>
        Une activité originale et mémorable, à <strong>Saumur et dans un rayon de 20 km</strong>, pour que la bonne énergie du jour J se prolonge bien au-delà.
@@ -120,8 +145,6 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
       Je travaille au quotidien avec des <strong>jeunes en situation de handicap</strong>. Je connais les TSA et le handicap dans sa diversité, je comprends les <strong>besoins spécifiques</strong>, j'adapte chaque séance en conséquence.<br> Un cadre stable, des rituels clairs, et une approche pensée pour que chaque enfant puisse avancer sereinement, à sa façon.</p>
 "
   
-    image={maPhoto}
-    imageAlt="Natacha Boxe Thérapie Saumur"
     lienLabel="J'aimerais en savoir plus"
     lienHref={`${import.meta.env.BASE_URL}/apropos`}
   />
@@ -143,10 +166,10 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
     lienTous="https://www.google.com/search?q=Natacha+Boxe+Th%C3%A9rapie&stick=H4sIAAAAAAAA_-NgU1I1qDBLM0u2TLMwMkwyTDI2N06zMqgwT0o0M7VIs0g2STE3TUtOWsQq5pdYkpickajglF-RqhCScXhlUWJBZioAy_HqhEIAAAA&hl=fr&mat=CcLMuu11crFhElcBTVDHnpNaDgOg_MO4mzIkc5ZTEQf30uV11dAO6hFX-YlHu9uUgoMjn79l5uPNAc4V7c9Q35YdJIps9PCGS2dEGpoCbWPQbV6J0d2Y9v28-SY6RRdU5EQ&authuser=0" 
     avis={[
       { texte: "Ces séances m'ont permis d'améliorer ma condition physique, renforcer mon cardio et augmenter ma confiance et l' estime de soi. De plus, j'éprouve un bien être, un équilibre psychique. Ces séances en groupe nous apportent des moments de partage et de soutien, le tout soupoudré de légèreté, de rires et d' entraide.", auteur: "Stéfany"},
-      { texte: "Praticante de la boxe thérapie en collectivité et en individuel, c'est une libération émotionnelle profonde et un épanouissement personnel. Prise de confiance, dépassement de soi, introspection assurée", auteur: "Marine Leroyer" },
+      { texte: "Praticante de la boxe thérapie en collectivité et en individuel, c'est une libération émotionnelle profonde et un épanouissement personnel. Prise de confiance, dépassement de soi, introspection assurée", auteur: "Marine" },
       { texte: "Des cours de boxe thérapie qui font un bien fou, autant au corps qu’au mental. On ressort boostée, plus confiante et pleine d’énergie. Natacha est incroyable : son énergie est communicative et elle sait vraiment nous embarquer. Il y a une vraie sororité dans le groupe, beaucoup de bienveillance et aucun jugement. Un moment pour soi qui fait vraiment la différence !", auteur: "Coralie"},
       { texte: "Une rencontre au moment où j'en avais vraiment besoin. Les séances font vraiment du bien! On en redemande même en dehors des créneaux de la MJC.", auteur: "Bénédicte"},
-      { texte: "Grâce à Natacha, j’ai récupéré beaucoup de confiance en moi, je fais maintenant des choses que je n’osais pas avant. J’ai adoré les discussions avec elle pendant les cours.", auteur: "Sarah, 10 ans" },
+      { texte: "Grâce à Natacha, j’ai récupéré beaucoup de confiance en moi, je fais maintenant des choses que je n’osais pas avant. J’ai adoré les discussions avec elle pendant les cours.", auteur: "Sarah" },
       { texte: "L’approche de Natacha m’a permis de reprendre contact avec mes possibles, de pointer ce qui était encore à travailler. Nous sommes, toutes les femmes, une grande communauté qui doit s’entraider et Natacha est une d’entre nous qui a décidé d’aider les autres.", auteur: "China" },
       { texte: "Dans nos vies de femmes, on nous fait toujours sentir qu’on est un petit peu nulle et donc la boxe ça faisait des années que ça me tentait mais une fois de plus j’avais peur d’être nulle. Quand je suis tombée sur la carte de Natacha je me suis dit il faut tenter et c’est une des meilleures choses que j’ai faite. La bienveillance, l’écoute et les bons conseils de Natacha ainsi que les pattes d’ours 🤣 ont fait que je ne suis pas prête d’oublier cette première séance. Après les séances individuelles je me suis inscrite à la MJC et toutes les semaines je fais une séance en groupe. Avec des filles super 👍 Cette activité me permet de me sentir plus solide, plus belle et alors plus du tout nulle ❤️. ", auteur: "Céline"  }
 
@@ -173,7 +196,7 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
   <Slider
     slides={realisations}
     title="Séances de boxe thérapie"
-    subtitle="Découvrez quelques photos de séances de boxe thérapie à Saumur."
+    subtitle="Et chaque mouvement devient une introspection. On vient déposer ses blessures, traverser ses émotions et repartir plus aligné, plus fort, plus vivant."
     facebookUrl="https://www.facebook.com/profile.php?id=61561327531815"
   />
     
