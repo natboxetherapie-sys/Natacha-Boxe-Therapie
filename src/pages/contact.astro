@@ -6,7 +6,7 @@ import Formulaire from '../components/Formulaire.astro';
 import Zone from '../components/Zone.astro';
 import { siteConfig } from '../config/site.ts';
 import monImage from '../images/gants.webp';
-import zone from '../images/zone.webp';
+import carteZone from '../images/zone.webp';
 
 const base = import.meta.env.BASE_URL;
 
@@ -71,9 +71,9 @@ const schema = [
 
   <Zone 
       titre="Ma zone d'intervention"
-      image={zone}
+      image={carteZone}
       imageAlt="carte de la zone d'intervention de Natacha Boxe thérapie à Saumur"
-      carteUrl="mettre le lien google maps"
+      carteUrl="https://share.google/MIFRXhOpA1wNrpwJp"
   />
 
 </BaseLayout>
