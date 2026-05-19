@@ -1,4 +1,7 @@
-@import '@fontsource/lexend'; /* Grammage 400 par défaut */
+@import '@fontsource/lexend/400.css';
+@import '@fontsource/lexend/500.css';
+@import '@fontsource/lexend/700.css';
+@import '@fontsource/great-vibes';
 
 :root {
   --color-blanc-lin: #f5f2eb;
@@ -19,8 +22,22 @@ body
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, strong {
-  font-weight: 700;
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400; /* Great Vibes n'a que le 400 */
+  margin: 0;
+  line-height: 1.2;
+  font-size: 72px; /* augmente ici — essaie 64px, 72px ou 80px */
+}
+
+h2 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500; /* moins gras que 700 — essaie aussi 400 ou 600 */
+}
+
+h3, strong {
+  font-weight: 500; /* le gras reste sur h2, h3, strong */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,11 +85,7 @@ a {
   margin: 0;
 }
 */
-h1 {
-  margin: 0;
-  line-height: 1.2;
-  font-size: 46px;
-}
+
 /*
 .secondary-text {
   font-size: inherit;
