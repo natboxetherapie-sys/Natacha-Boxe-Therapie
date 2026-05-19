@@ -15,7 +15,7 @@ import { siteConfig } from '../config/site';
 
 import monImage from '../images/natacha1.webp';
 import maPhoto from '../images/atelier4.webp';
-import tonImage from '../images/atelier8.webp';
+import tonImage from '../images/atelier11.webp';
 
 
 import natacha3 from '../images/natacha3.webp';
@@ -30,7 +30,7 @@ import atelier6 from '../images/atelier6.webp';
 import atelier7 from '../images/atelier7.webp';
 import atelier9 from '../images/atelier9.webp';
 import atelier10 from '../images/atelier10.webp';
-import atelier11 from '../images/atelier11.webp';
+import atelier8 from '../images/atelier8.webp';
 
 
 
@@ -46,7 +46,7 @@ const realisations = [
   { src: atelier5.src, alt: "une enfant lors d'un atelier de boxe thérapie à Saumur", width:350, height: 466 },
   { src: atelier6.src, alt: "Natacha et une élève en boxe thérapie à Saumur", width:518, height: 600 },
   { src: atelier7.src, alt: "atelier collectif de boxe thérapie à Saumur", width:399, height: 600 },
-  { src: atelier11.src, alt: "atelier avec Natacha boxe thérapie à Saumur", width:399, height: 600 },
+  { src: atelier8.src, alt: "atelier avec Natacha boxe thérapie à Saumur", width:399, height: 600 },
   { src: atelier9.src, alt: "Natacha boxe thérapie à Saumur", width:600, height: 692 },
   { src: atelier10.src, alt: "séance avec Natacha de boxe thérapie à Saumur", width:600, height: 900 },
 ];
@@ -66,16 +66,32 @@ const mesEtapes = [
   canonical={siteConfig.url}
   ogTitle={`${siteConfig.name} - ${siteConfig.tagline}`}
   ogDescription={siteConfig.description}
-  schema={null}
+  schema={[
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Natacha Boxe Thérapie",
+      "url": "https://natacha-boxetherapie.fr",
+      "telephone": "+33684556902",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Saumur",
+        "addressRegion": "Pays de la Loire",
+        "addressCountry": "FR"
+      },
+      "description": siteConfig.description,
+      "areaServed": "Saumur et rayon de 20km"
+    }
+  ]}
 >
 
   <Hero
     titre="Natacha Boxe Thérapie - Saumur"
     texte="<p><strong>Libérer, Renforcer, transformer</strong></p>
             <em>Corps, coeur et mental en harmonie</em>
-          <p><strong>Boxe thérapeute</strong> certifiée à Saumur et dans un rayon de 20km</p>
+          <p><strong>Boxe thérapeute</strong> certifiée à Saumur et dans un rayon de 20km.</p>
 
-<p>Tu ressens le besoin de te retrouver, de respirer et d'avancer.</p>
+<p>Tu ressens le besoin de te retrouver, de respirer et d'avancer ?</p>
 <p>La <strong>boxe thérapie</strong>, c’est un espace bienveillant, sans jugement ni compétition, où le mouvement libère ce que les mots ne réussissent pas à dire.</p>
 
 Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
@@ -116,14 +132,14 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
 <BlocTexteImage
     titre="À qui s'adressent mes séances ?"
     texte="<h3>Les enfants et les adolescents</h3>
-        <p>Un espace bienveillant pour exprimer ses émotions et reprendre confiance.<br>
+        <p>Un espace bienveillant pour <strong>exprimer ses émotions et reprendre confiance</strong>.<br>
         La <strong>boxe thérapie</strong> est une activité accessible à tous les jeunes, quel que soit leur niveau sportif ou leur rapport au mouvement. <br>
         Chaque séance individuelle est pensée pour <strong>avancer à son rythme</strong>, sans compétition ni pression.<br> J'accompagne les enfants et les adolescents à <strong>Saumur et alentours</strong>, en adaptant chaque séance à leur profil.</p>
 
         <h3>Les femmes et les hommes en quête de mieux-être</h3>
         <p>Pour <strong>retrouver de l'énergie, lâcher prise et se reconnecter avec soi-même</strong>.<br>
         Après une période difficile ( maladie chronique, burn-out, séparation, deuil...) ou simplement quand on a <strong>besoin de souffler</strong>, la <strong>boxe thérapie</strong> offre un espace doux et dynamisant pour évacuer les <strong>émotions</strong> accumulées et retrouver de l'élan.<br>
-         Je propose un <strong>accompagnement adapté</strong> à ton état physique et émotionnel, à ton propre tempo.</p>"
+         Je te propose un <strong>accompagnement adapté</strong> à ton état physique et émotionnel, à ton propre tempo.</p>"
 
      
   
@@ -141,8 +157,8 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
        Une activité originale et mémorable, à <strong>Saumur et dans un rayon de 20 km</strong>, pour que la bonne énergie du jour J se prolonge bien au-delà.</p>
 
       <h3>Les enfants à besoins spécifiques</h3>
-      <p>Une activité adaptée à tous.<br>
-      Je travaille au quotidien avec des <strong>jeunes en situation de handicap</strong>. Je connais les TSA et le handicap dans sa diversité, je comprends les <strong>besoins spécifiques</strong>, j'adapte chaque séance en conséquence.<br> Un cadre stable, des rituels clairs, et une approche pensée pour que chaque enfant puisse avancer sereinement, à sa façon.</p>
+      <p>Une activité <strong>adaptée à tous</strong>.<br>
+      Je travaille au quotidien avec des <strong>jeunes en situation de handicap</strong>. Je connais les TSA et le handicap dans sa diversité, je comprends les <strong>besoins spécifiques</strong>. J'adapte chaque séance en conséquence.<br> Un cadre stable, des rituels clairs, et une approche pensée pour que chaque enfant puisse avancer sereinement, à sa façon.</p>
 "
   
     lienLabel="J'aimerais en savoir plus"
@@ -205,8 +221,8 @@ Pour les enfants, les ados, les adultes, quel que soit ton point de départ.
       { question: "C'est quoi la boxe thérapie ?", reponse: "La boxe thérapie, ce n'est pas de la compétition ni du sport intensif. C'est une approche qui utilise les gestes de la boxe (les frappes, le souffle, le mouvement) comme un outil pour libérer les émotions, évacuer le stress et se reconnecter à soi. Le corps et les émotions sont profondément liés : quand le corps se dénoue, quelque chose se libère aussi à l'intérieur." },
       { question: "Comment se passe une séance de boxe thérapie ?", reponse: "Chaque séance est unique et adaptée à qui vous êtes. Elle combine des exercices de boxe, de la respiration, des moments d'écoute et de reconnexion à vos ressentis. Pas de niveau requis, pas de jugement. On avance à votre rythme, dans un cadre bienveillant et sécurisé." },
       { question: "La boxe thérapie est-elle efficace ?", reponse: "Oui, à condition d'y venir avec l'envie de s'écouter. Beaucoup de participants repartent plus légers, plus ancrés, avec davantage d'énergie. Les bienfaits les plus souvent ressentis : réduction du stress, regain de confiance, meilleure gestion des émotions et reconnexion à son corps." },
-      { question: "La boxe thérapie, c'est pour qui ?", reponse: "Pour tout le monde ! Les enfants, les adolescents, les adultes, les personnes en situation de handicap. Que vous soyez sportif ou non, que vous traversiez une période difficile ou que vous cherchiez simplement à prendre soin de vous... il n'y a pas de profil type. Chaque séance est adaptée à votre situation." },
-      { question: "Comment fonctionne la boxe thérapie pour le bien-être ?", reponse: "Le principe repose sur le lien entre le corps et les émotions. En mobilisant le corps à travers les gestes de la boxe, on libère les tensions physiques et émotionnelles accumulées. Le mouvement permet d'évacuer ce que les mots ne réussissent pas toujours à exprimer : stress, colère, tristesse, épuisement." },
+      { question: "La boxe thérapie, c'est pour qui ?", reponse: "Pour tout le monde ! Les enfants, les adolescents, les adultes, les personnes en situation de handicap. Que vous soyez sportif ou non, que vous traversiez une période difficile ou que vous cherchiez simplement à prendre soin de vous... Il n'y a pas de profil type. Chaque séance est adaptée à votre situation." },
+      { question: "Comment fonctionne la boxe thérapie pour le bien-être ?", reponse: "Le principe repose sur le lien entre le corps et les émotions. En mobilisant le corps à travers les gestes de la boxe, on libère les tensions physiques et émotionnelles accumulées. Le mouvement permet d'évacuer ce que les mots ne réussissent pas toujours à exprimer : stress, colère, tristesse, épuisement etc." },
       { question: "Quels sont les tarifs de la boxe thérapie ?", reponse: "Les tarifs varient selon le format choisi (séance individuelle, atelier collectif, intervention en entreprise) et la durée. Contactez-moi pour un premier échange gratuit. Je vous propose ensuite une formule adaptée à vos besoins." }
     ]}
   />
