@@ -37,9 +37,23 @@ const {
         <BackToTop />
 	
 <script>
-       import "../scripts/menu.js";
+  import "../scripts/menu.js";
+</script>
 
-  </script>
+<script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+  
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 0,
+  });
+
+  setTimeout(() => {
+    AOS.refresh();
+  }, 100);
+</script>
 
 	</body>
 </html>
