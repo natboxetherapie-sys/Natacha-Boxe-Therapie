@@ -1,7 +1,7 @@
 ---
 // Script : props optionnelles
 import Navigation from './Navigation.astro';
-import logo from '../images/logo.png';
+import logo from '../images/logo.webp';
 
 const {
   altLogo = "Logo",
@@ -10,7 +10,7 @@ const {
 <header>
 
 <div class="header-logo">
-  <img src={logo.src} alt={altLogo} width="250" height="210">
+  <img src={logo.src} alt={altLogo} width="600" height="508">
 </div>
 
 <Navigation>
@@ -33,7 +33,7 @@ header {
   padding: 1rem 20rem;
 }
 .header-logo img {
-  height: 220px;
+  height: 280px;
   width: auto;
 }
 @media (max-width: 900px) {
