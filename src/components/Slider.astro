@@ -1,13 +1,13 @@
 ---
-import logofb from '../images/logofb.png';
+import logoinsta from '../images/instagram.svg';
 interface Props {
   slides: { src: string; alt: string; caption?: string; width: number; height: number }[];
   title?: string;
   subtitle?: string;
-  facebookUrl?: string;
+  instagramUrl?: string;
 }
 
-const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astro.props;
+const { slides, title = "Mes réalisations", subtitle = "", instagramUrl } = Astro.props;
 ---
 
 <section class="slider-section" id="realisations">
@@ -30,11 +30,12 @@ const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astr
       <button class="slider-next" aria-label="Image suivante">›</button>
     </div>
 
-    {facebookUrl && (
+    {instagramUrl && (
       <div class="cta-fb">
-        <a href={facebookUrl} target="_blank" rel="noopener noreferrer" class="btn-fb">
-          <img src={logofb.src} alt="Facebook" width="36" height="36" />
-          Voir la page Facebook de Natacha Boxe Thérapie
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="bouton-fonce"
+        aria-label="Voir le compte Instagram de Natacha Boxe thérapie">
+          <img src={logoinsta.src} alt="instagram" width="36" height="36" />
+          Suivre sur Instagram 
         </a>
       </div>
     )}
@@ -166,6 +167,12 @@ const { slides, title = "Mes réalisations", subtitle = "", facebookUrl } = Astr
     text-align: center;
     margin-top: 2rem;
   }
+
+  .cta-fb a.bouton-fonce {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
   .btn-fb {
     display: inline-flex;
