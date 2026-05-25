@@ -19,17 +19,17 @@ const {
 ---
 
 <section class="avis">
-  <h2>{titre}</h2>
+  <h2 data-aos="fade-up">{titre}</h2>
   <div class="avis-list">
-    {avis.map((a) => (
-      <div class="avis-item">
+    {avis.map((a, index) => (
+      <div class="avis-item" data-aos="fade-up" data-aos-delay={index * 100}>
         <div class="stars">{"★".repeat(a.etoiles ?? 5)}</div>
         <p>{a.texte}</p>
         <span>— {a.auteur}</span>
       </div>
     ))}
   </div>
-  <p class="avis-source">
+  <p class="avis-source" data-aos="fade-up" data-aos-delay={avis.length * 100}>
     Avis issus de Google —
     <a href={lienTous} target="_blank" rel="noopener">
       👉<strong>Voir tous les avis</strong>
@@ -98,6 +98,7 @@ const {
   margin-top: 2rem;
   font-size: 0.95rem;
   opacity: 0.9;
+  text-align: center;
 }
 
 .avis-source a {

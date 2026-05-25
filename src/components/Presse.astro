@@ -21,10 +21,10 @@ const {
 
 <section class="presse">
     <div class="presse-contenu">
-  <h2>{titre}</h2>
+  <h2 data-aos="fade-up">{titre}</h2>
   <div class="cards-presse">
-    {articles.map((article) => (
-      <div class="card">
+    {articles.map((article, index) => (
+      <div class="card" data-aos="fade-up" data-aos-delay={index * 100}>
         <div class="card-img-zoom">
           <img
             src={article.image}

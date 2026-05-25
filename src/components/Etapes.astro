@@ -23,10 +23,10 @@ const {
 
 <section class="etapes">
   <div class="container">
-    <h2>{titre}</h2>
-      {intro && <p class="etapes-intro" set:html={intro} />}
-    {etapes.map((etape) => (
-      <div class="etape">
+    <h2 data-aos="fade-up">{titre}</h2>
+      {intro && <p class="etapes-intro" set:html={intro} data-aos="fade-up" data-aos-delay="100" />}
+    {etapes.map((etape, index) => (
+      <div class="etape" data-aos="fade-up" data-aos-delay={index * 100}>
         <div class="etape-name">
           <h3>{etape.titre}</h3>
         </div>

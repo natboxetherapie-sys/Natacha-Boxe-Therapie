@@ -21,12 +21,12 @@ const {
 ---
 
 <section class="presentation">
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <h2>{titre}</h2>
     <p set:html={description} />
   </div>
 
-  <div class="cta">
+  <div class="cta" data-aos="fade-up" data-aos-delay="200">
     <div class="texte-cta">
       {boutonTexte && (
       <a href={boutonLien} class="bouton-fonce">{boutonTexte}</a>

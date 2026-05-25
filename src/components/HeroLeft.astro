@@ -25,7 +25,7 @@ const {
 ---
 
 <div class="hero">
-  <div class="hero-img">
+  <div class="hero-img" data-aos="fade-right">
     <img
       src={image.src}
       alt={imageAlt}
@@ -35,7 +35,7 @@ const {
     >
   </div>
 
-  <div class="text-hero">
+  <div class="text-hero" data-aos="fade-left">
     <div class="main-text"><h2>{titre}</h2></div>
     <div class="secondary-text" set:html={texte} />
     {lienLabel && (

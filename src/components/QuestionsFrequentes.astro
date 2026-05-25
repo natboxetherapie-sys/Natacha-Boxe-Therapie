@@ -16,9 +16,9 @@ const {
 ---
 
 <section class="faq-section">
-  <h2>{titre}</h2>
-  {questions.map((item) => (
-    <div class="faq-item">
+  <h2 data-aos="fade-up">{titre}</h2>
+  {questions.map((item, index) => (
+    <div class="faq-item" data-aos="fade-up" data-aos-delay={index * 100}>
   <h3 class="faq-question">
     <button type="button" class="faq-question-btn">
       <span>{item.question}</span>

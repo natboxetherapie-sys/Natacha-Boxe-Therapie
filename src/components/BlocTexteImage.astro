@@ -29,7 +29,7 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
 ---
 
 <div class="hero">
-  <div class="text-hero">
+  <div class="text-hero" data-aos="fade-right">
       {titre && (
     <div class="main-text"><h2>{titre}</h2></div>
     )}
@@ -39,7 +39,7 @@ const texteAvecBase = texte.replace(/__BASE__/g, base.endsWith('/') ? base : bas
     )}
   </div>
   {image && (
-  <div class="hero-img">
+  <div class="hero-img" data-aos="fade-left">
     <img
       src={image.src}
       alt={imageAlt ?? ""}
