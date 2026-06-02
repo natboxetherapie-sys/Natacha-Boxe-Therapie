@@ -43,6 +43,14 @@ const year = new Date().getFullYear();
     {liensLegaux.map((lien) => (
       <div><a href={lien.href}>{lien.label}</a></div>
     ))}
+
+        <div class="footer-credit">
+      <span>Crédits photos : </span>
+      <a href="https://www.facebook.com/p/David-Delarue-Photographies-100063636365017/?locale=fr_FR" target="_blank" rel="noopener noreferrer">
+        David Delarue
+      </a>
+    </div>
+
     <div>
   <span>&copy; {year} </span>
   {lienCreateur 
@@ -70,6 +78,10 @@ footer {
     align-items: center;
 
 }
+.footer-credit {
+  margin-top: 0.75rem;
+}
+
 .footer-logo {
     display: flex;
     align-items: center;
