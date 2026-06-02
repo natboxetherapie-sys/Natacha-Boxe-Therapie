@@ -1,10 +1,10 @@
 // src/config/site.ts
 export const siteConfig = {
   name: "Natacha Boxe Thérapie",
-  url: "https://natacha-boxetherapie.fr",
+  url: "https://www.natacha-boxetherapie.fr",
   tagline: "Boxe thérapeute à Saumur",
   description: "Natacha, boxe thérapeute certifiée à Saumur. Séances individuelles et ateliers collectifs pour libérer les émotions et retrouver confiance en soi.",
-  defaultOgImage: "https://natacha-boxetherapie.fr/natacha1.webp",
+  defaultOgImage: "https://www.natacha-boxetherapie.fr/natacha1.jpeg",
   telephone: "+33684556902",
   email: "nat.boxetherapie@gmail.com",
   facebook: "https://www.facebook.com/profile.php?id=61561327531815",
