@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://natacha-boxe-therapie.vercel.app/',
+  site: 'https://www.natacha-boxetherapie.fr',
   // base: '/Natacha-Boxe-Therapie',
   integrations: [sitemap()],
 });
