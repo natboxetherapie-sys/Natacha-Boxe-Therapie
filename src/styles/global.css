@@ -143,3 +143,18 @@ h2 {
   font-size: 28px;
   text-align: center;
 }
+[data-aos^="fade"] {
+  transition-property: opacity, transform;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 20px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

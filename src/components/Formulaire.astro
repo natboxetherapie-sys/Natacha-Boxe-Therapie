@@ -16,7 +16,10 @@ const {
     <input type="hidden" name="subject" value="Nouveau message depuis le site Natacha Boxe Thérapie" />
 
     <!-- Honeypot anti-spam (invisible pour les humains) -->
-    <input type="checkbox" name="botcheck" style="display:none;" />
+<div class="sr-only" aria-hidden="true">
+  <label for="botcheck">Ne pas remplir ce champ</label>
+  <input type="checkbox" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off" />
+</div>
 
     <ul>
       <li class="ligne-double">
@@ -206,6 +209,18 @@ const {
       margin-top: 0;
     }
   }
+
+  .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 </style>
 
 <script>

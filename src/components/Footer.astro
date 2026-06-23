@@ -32,14 +32,14 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="footer-menu">
-    <p>Parcourir</p>
+    <h2>Parcourir</h2>
     {liens.map((lien) => (
       <div><a href={lien.href}>{lien.label}</a></div>
     ))}
   </div>
 
   <div class="footer-menu">
-    <p>Aides et Légal</p>
+    <h2>Aides et Légal</h2>
     {liensLegaux.map((lien) => (
       <div><a href={lien.href}>{lien.label}</a></div>
     ))}
@@ -94,7 +94,7 @@ footer {
   border-radius: 12px;
 }
 
-footer p, footer a, footer span {
+footer p, footer a, footer span, footer h2 {
     font-size: 0.85em;
 }
 
